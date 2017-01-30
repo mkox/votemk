@@ -26,15 +26,15 @@ export default {
   template: '#vote',
   data: () => ({
     searchQuery: '',
-    gridColumns: ['name', 'vue_seats', 'vue_seats_regional', 'vue_seats_regional_changed', 'vue_seats_international', 'vue_seats_international_changed', 'ranking_list_id'],
+    gridColumns: ['name', 'vue_seats', 'vue_seats_area', 'vue_seats_changed', 'vue_votes'],
     gridData: []
   }),
   beforeMount() {
     
     var thisBeforeMount = this;
-    var promise = axios.get('static/rawData/startjson9b.json')
+    var promise = axios.get('static/rawData/startjson13b.json')
     .then(function (response) {
-      console.log(response);
+      console.log('startjson-response', response);
       var extendedData = getExtendedData(response.data);
       var sbs = showSBBasics(extendedData);
       thisBeforeMount.gridData = sbs;
@@ -60,14 +60,13 @@ function getExtendedData(rawData) {
 }
 
 function showSBBasics(extendedData) {
-    var sbs = extendedData.supervisory_boards;
+    var sbs = extendedData.ranking_list_international.supervisory_boards;
 
     for(var i = 0; i < sbs.length; i++) {
         sbs[i]["vue_seats"] = sbs[i].seats.total;
-        sbs[i]["vue_seats_regional"] = sbs[i].seats.regional.total;
-        sbs[i]["vue_seats_regional_changed"] = sbs[i].seats.regional.changed;
-        sbs[i]["vue_seats_international"] = sbs[i].seats.international.total;
-        sbs[i]["vue_seats_international_changed"] = sbs[i].seats.international.changed;
+        sbs[i]["vue_seats_area"] = sbs[i].seats.international.total;
+        sbs[i]["vue_seats_changed"] = sbs[i].seats.international.changed;
+        sbs[i]["vue_votes"] = sbs[i].votes.international;
     }
     return sbs;
 }
