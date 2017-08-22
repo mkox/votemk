@@ -15,11 +15,12 @@
 import Vue from 'vue';
 import Votegrid from './components/Votegrid';
 //console.log('Votegrid:', Votegrid);
-import axios from 'axios';
+import store from './vuex/store'
+//import axios from 'axios';
 //import rankingList from 'rankingList';
 
 //var axios = require('axios');
-var rankingList = require('rankingList');
+//var rankingList = require('rankingList');
 
 export default {
   name: 'vote',
@@ -32,43 +33,34 @@ export default {
   beforeMount() {
     
     var thisBeforeMount = this;
-    var promise = axios.get('static/rawData/startjson13b.json')
-    .then(function (response) {
-      console.log('startjson-response', response);
-      var extendedData = getExtendedData(response.data);
-      var sbs = showSBBasics(extendedData);
-      thisBeforeMount.gridData = sbs;
-      console.log('extendedData: ', extendedData);
-    })
-    .catch(function (error) {
-      console.log(error);
+
+    store.dispatch('setExtendedData').then(DelayPromise(1000)).then(() => {  // TODO: LATER OTHER SOLUTION than DelayPromise()
+      //thisBeforeMount.gridData = this.$store.getters.getSupervisoryBoards;
+      console.log('in beforeMount, x100 ');
+      thisBeforeMount.gridData = thisBeforeMount.$store.getters.getSupervisoryBoards;
+      console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
     });
-      
+
+    console.log('"this" in beforeMount: ', this);
+    //console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
   },
   components: {
     'votegrid': Votegrid
-  }
+  },
+  store
 };
-    
-function getExtendedData(rawData) {
-    
-    rankingList.setStartData(rawData);
-    rankingList.extendData();
-    var extendedData = rankingList.getExtendedData();
-    //console.log('extendedData 10', extendedData);
-    return extendedData;
-}
 
-function showSBBasics(extendedData) {
-    var sbs = extendedData.ranking_list_international.supervisory_boards;
-
-    for(var i = 0; i < sbs.length; i++) {
-        sbs[i]["vue_seats"] = sbs[i].seats.total;
-        sbs[i]["vue_seats_area"] = sbs[i].seats.international.total;
-        sbs[i]["vue_seats_changed"] = sbs[i].seats.international.changed;
-        sbs[i]["vue_votes"] = sbs[i].votes.international;
-    }
-    return sbs;
+function DelayPromise(delay) {  // https://blog.raananweber.com/2015/12/01/writing-a-promise-delayer/
+  //return a function that accepts a single variable
+  return function(data) {
+    //this function returns a promise.
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        //a promise that is resolved after "delay" milliseconds with the data provided
+        resolve(data);
+      }, delay);
+    });
+  }
 }
 </script>
 
