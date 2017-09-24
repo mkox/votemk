@@ -24,41 +24,11 @@ const SbDetail = {
       sbs: store.getters.getSupervisoryBoards
     }
   },
-beforeRouteEnter (to, from, next) {
-  var a1 = 'a1x';
-  
-  var x2 = store.getters.getSupervisoryBoards;
-  console.log('beforeRouteEnter x2', x2);
-  /*
-  var x2b = x2[1].id;
-  console.log('beforeRouteEnter x2b', x2b);
-  */
-  //next(vm => vm.sbs = store.getters.getSupervisoryBoards);
-  next(vm => {
-    vm.bla1 = 'zzBla1',
-    vm.sbs = x2
-  });
-  /*
-  axios.post('http://schematic-ipsum.herokuapp.com/', {
-    "type": "object",
-    "properties": {
-      "name": {
-        "type": "string",
-        "ipsum": "name"
-      },
-      "phone": {
-        "type": "string",
-        "format": "phone"
-      }
-    }
-  }).then(response => {
+  beforeRouteEnter (to, from, next) {
     next(vm => {
-      vm.name = response.data.name
-      vm.phone = response.data.phone
-    })
-  })
-  */
-}
+      vm.bla1 = 'zzBla1b'
+    });
+  }
 }
 const router = new VueRouter({
   routes: [
