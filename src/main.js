@@ -13,13 +13,11 @@ import store from './vuex/store'
 Vue.use(VueRouter)
 const Home = { template: '<div>Click on <b>name</b> of supervisory board to see details.</div>' }
 const SbDetail = { 
-  template: '<div>Details: {{ $route.params.sb_name }}<br>' +
-  'bla1: {{ bla1 }}<br>' +
-  'firmly selected id: {{ sbs[1].id }}</div>',
+  template: '<div>Index: {{ $route.params.sb_index }}<br>' +
+  'Name of the sb: {{ sbs[$route.params.sb_index].name }}<br>' +
+  'bla1: {{ bla1 }}<br></div>',
   data () {
     return {
-      name: undefined,
-      phone: undefined,
       bla1: undefined,
       sbs: store.getters.getSupervisoryBoards
     }
@@ -33,7 +31,7 @@ const SbDetail = {
 const router = new VueRouter({
   routes: [
     { path: '/', component: Home },
-    { path: '/sb_detail/:sb_name', component: SbDetail, name: 'sbDetail'}
+    { path: '/sb_detail/:sb_index', component: SbDetail, name: 'sbDetail'}
   ]
 })
 
