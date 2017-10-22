@@ -4,7 +4,38 @@
       <td>
         <div v-if="sbIndex >= 0">Index: {{ sbIndex }}<br>Name of the sb: {{ sbs[sbIndex].name }}<br>
         </div>
+        <div v-if="sbs[sbIndex]">
+          <div v-if="sbs[sbIndex].voteDifferences.international.length > 0
+                     || sbs[sbIndex].voteDifferences.regional.length > 0">
+            <table>
+              <thead>
+                <tr>
+                  <th>too few</th>
+                  <th>too much</th>
+                  <th>difference</th>
+                  <th>area</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(entry, entryIndex) in sbs[sbIndex].voteDifferences.international">
+                  <td>{{entry.listTooFew.name}}</td>
+                  <td>{{entry.listTooMuch.name}}</td>
+                  <td>{{Math.round(entry.difference*100)/100}} %</td>
+                  <td>international</td>
+                </tr>
+                <tr v-for="(entry, entryIndex) in sbs[sbIndex].voteDifferences.regional">
+                  <td>{{entry.listTooFew.name}}</td>
+                  <td>{{entry.listTooMuch.name}}</td>
+                  <td>{{Math.round(entry.difference*100)/100}} %</td>
+                  <td>regional</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </td>
+    </tr>
+    <tr>
       <td>
         <table>
           <tr v-for="list in sbLists">
