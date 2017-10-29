@@ -1,0 +1,5277 @@
+{
+    "ranking_lists": [{
+            "id": 1,
+            "name": "Ranking list A int",
+            "region": "international",
+            "current": true,
+            "sb_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        }, {
+            "id": 2,
+            "name": "Ranking list B reg",
+            "region": "REG1",
+            "current": false,
+            "sb_ids": [11, 12, 13, 14, 15, 16, 7, 8, 9, 10]
+        }, {
+            "id": 3,
+            "name": "Ranking list C reg",
+            "region": "REG2",
+            "current": false,
+            "sb_ids": [1, 2, 3, 4, 5, 6, 17, 18, 19, 20]
+        }],
+    "parties": [{
+            "id": 1,
+            "name": "AA"
+        }, {
+            "id": 2,
+            "name": "BB"
+        }, {
+            "id": 3,
+            "name": "CC"
+        }, {
+            "id": 4,
+            "name": "DD"
+        }],
+    "supervisory_boards": [{
+            "id": 1,
+            "name": "SB1",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 2,
+            "name": "SB2",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 3,
+            "name": "SB3",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 4,
+            "name": "SB4",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 5,
+            "name": "SB5",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 6,
+            "name": "SB6",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 7,
+            "name": "SB7",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 8,
+            "name": "SB8",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 9,
+            "name": "SB9",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 10,
+            "name": "SB10",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 11,
+            "name": "SB11",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 12,
+            "name": "SB12",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 13,
+            "name": "SB13",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 14,
+            "name": "SB14",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 15,
+            "name": "SB15",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 16,
+            "name": "SB16",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 17,
+            "name": "SB17",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 18,
+            "name": "SB18",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 19,
+            "name": "SB19",
+            "seats": {
+                "total": 5
+            }
+        }, {
+            "id": 20,
+            "name": "SB20",
+            "seats": {
+                "total": 5
+            }
+        }],
+    "lists_of_candidates": [{
+            "id": 1,
+            "supervisory_board_id": 1,
+            "name": "A"
+        }, {
+            "id": 2,
+            "supervisory_board_id": 1,
+            "name": "B"
+        }, {
+            "id": 3,
+            "supervisory_board_id": 1,
+            "name": "C"
+        }, {
+            "id": 4,
+            "supervisory_board_id": 1,
+            "name": "D"
+        }, {
+            "id": 5,
+            "supervisory_board_id": 2,
+            "name": "A"
+        }, {
+            "id": 6,
+            "supervisory_board_id": 2,
+            "name": "B"
+        }, {
+            "id": 7,
+            "supervisory_board_id": 2,
+            "name": "C"
+        }, {
+            "id": 8,
+            "supervisory_board_id": 2,
+            "name": "D"
+        }, {
+            "id": 9,
+            "supervisory_board_id": 3,
+            "name": "A"
+        }, {
+            "id": 10,
+            "supervisory_board_id": 3,
+            "name": "B"
+        }, {
+            "id": 11,
+            "supervisory_board_id": 3,
+            "name": "C"
+        }, {
+            "id": 12,
+            "supervisory_board_id": 3,
+            "name": "D"
+        }, {
+            "id": 13,
+            "supervisory_board_id": 4,
+            "name": "A"
+        }, {
+            "id": 14,
+            "supervisory_board_id": 4,
+            "name": "B"
+        }, {
+            "id": 15,
+            "supervisory_board_id": 4,
+            "name": "C"
+        }, {
+            "id": 16,
+            "supervisory_board_id": 4,
+            "name": "D"
+        }, {
+            "id": 17,
+            "supervisory_board_id": 5,
+            "name": "A"
+        }, {
+            "id": 18,
+            "supervisory_board_id": 5,
+            "name": "B"
+        }, {
+            "id": 19,
+            "supervisory_board_id": 5,
+            "name": "C"
+        }, {
+            "id": 20,
+            "supervisory_board_id": 5,
+            "name": "D"
+        }, {
+            "id": 21,
+            "supervisory_board_id": 6,
+            "name": "A"
+        }, {
+            "id": 22,
+            "supervisory_board_id": 6,
+            "name": "B"
+        }, {
+            "id": 23,
+            "supervisory_board_id": 6,
+            "name": "C"
+        }, {
+            "id": 24,
+            "supervisory_board_id": 6,
+            "name": "D"
+        }, {
+            "id": 25,
+            "supervisory_board_id": 7,
+            "name": "A"
+        }, {
+            "id": 26,
+            "supervisory_board_id": 7,
+            "name": "B"
+        }, {
+            "id": 27,
+            "supervisory_board_id": 7,
+            "name": "C"
+        }, {
+            "id": 28,
+            "supervisory_board_id": 7,
+            "name": "D"
+        }, {
+            "id": 29,
+            "supervisory_board_id": 8,
+            "name": "A"
+        }, {
+            "id": 30,
+            "supervisory_board_id": 8,
+            "name": "B"
+        }, {
+            "id": 31,
+            "supervisory_board_id": 8,
+            "name": "C"
+        }, {
+            "id": 32,
+            "supervisory_board_id": 8,
+            "name": "D"
+        }, {
+            "id": 33,
+            "supervisory_board_id": 9,
+            "name": "A"
+        }, {
+            "id": 34,
+            "supervisory_board_id": 9,
+            "name": "B"
+        }, {
+            "id": 35,
+            "supervisory_board_id": 9,
+            "name": "C"
+        }, {
+            "id": 36,
+            "supervisory_board_id": 9,
+            "name": "D"
+        }, {
+            "id": 37,
+            "supervisory_board_id": 10,
+            "name": "A"
+        }, {
+            "id": 38,
+            "supervisory_board_id": 10,
+            "name": "B"
+        }, {
+            "id": 39,
+            "supervisory_board_id": 10,
+            "name": "C"
+        }, {
+            "id": 40,
+            "supervisory_board_id": 10,
+            "name": "D"
+        }, {
+            "id": 41,
+            "supervisory_board_id": 11,
+            "name": "A"
+        }, {
+            "id": 42,
+            "supervisory_board_id": 11,
+            "name": "B"
+        }, {
+            "id": 43,
+            "supervisory_board_id": 11,
+            "name": "C"
+        }, {
+            "id": 44,
+            "supervisory_board_id": 11,
+            "name": "D"
+        }, {
+            "id": 45,
+            "supervisory_board_id": 12,
+            "name": "A"
+        }, {
+            "id": 46,
+            "supervisory_board_id": 12,
+            "name": "B"
+        }, {
+            "id": 47,
+            "supervisory_board_id": 12,
+            "name": "C"
+        }, {
+            "id": 48,
+            "supervisory_board_id": 12,
+            "name": "D"
+        }, {
+            "id": 49,
+            "supervisory_board_id": 13,
+            "name": "A"
+        }, {
+            "id": 50,
+            "supervisory_board_id": 13,
+            "name": "B"
+        }, {
+            "id": 51,
+            "supervisory_board_id": 13,
+            "name": "C"
+        }, {
+            "id": 52,
+            "supervisory_board_id": 13,
+            "name": "D"
+        }, {
+            "id": 53,
+            "supervisory_board_id": 14,
+            "name": "A"
+        }, {
+            "id": 54,
+            "supervisory_board_id": 14,
+            "name": "B"
+        }, {
+            "id": 55,
+            "supervisory_board_id": 14,
+            "name": "C"
+        }, {
+            "id": 56,
+            "supervisory_board_id": 14,
+            "name": "D"
+        }, {
+            "id": 57,
+            "supervisory_board_id": 15,
+            "name": "A"
+        }, {
+            "id": 58,
+            "supervisory_board_id": 15,
+            "name": "B"
+        }, {
+            "id": 59,
+            "supervisory_board_id": 15,
+            "name": "C"
+        }, {
+            "id": 60,
+            "supervisory_board_id": 15,
+            "name": "D"
+        }, {
+            "id": 61,
+            "supervisory_board_id": 16,
+            "name": "A"
+        }, {
+            "id": 62,
+            "supervisory_board_id": 16,
+            "name": "B"
+        }, {
+            "id": 63,
+            "supervisory_board_id": 16,
+            "name": "C"
+        }, {
+            "id": 64,
+            "supervisory_board_id": 16,
+            "name": "D"
+        }, {
+            "id": 65,
+            "supervisory_board_id": 17,
+            "name": "A"
+        }, {
+            "id": 66,
+            "supervisory_board_id": 17,
+            "name": "B"
+        }, {
+            "id": 67,
+            "supervisory_board_id": 17,
+            "name": "C"
+        }, {
+            "id": 68,
+            "supervisory_board_id": 17,
+            "name": "D"
+        }, {
+            "id": 69,
+            "supervisory_board_id": 18,
+            "name": "A"
+        }, {
+            "id": 70,
+            "supervisory_board_id": 18,
+            "name": "B"
+        }, {
+            "id": 71,
+            "supervisory_board_id": 18,
+            "name": "C"
+        }, {
+            "id": 72,
+            "supervisory_board_id": 18,
+            "name": "D"
+        }, {
+            "id": 73,
+            "supervisory_board_id": 19,
+            "name": "A"
+        }, {
+            "id": 74,
+            "supervisory_board_id": 19,
+            "name": "B"
+        }, {
+            "id": 75,
+            "supervisory_board_id": 19,
+            "name": "C"
+        }, {
+            "id": 76,
+            "supervisory_board_id": 19,
+            "name": "D"
+        }, {
+            "id": 77,
+            "supervisory_board_id": 20,
+            "name": "A"
+        }, {
+            "id": 78,
+            "supervisory_board_id": 20,
+            "name": "B"
+        }, {
+            "id": 79,
+            "supervisory_board_id": 20,
+            "name": "C"
+        }, {
+            "id": 80,
+            "supervisory_board_id": 20,
+            "name": "D"
+        }],
+    "candidates_in_list": [{
+            "id": 1,
+            "listofcandidates_id": 1,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 48,
+                "REG3": 49,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 2,
+            "listofcandidates_id": 1,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": 112,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 3,
+            "listofcandidates_id": 1,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 40,
+                "REG3": 23,
+                "REG1": 42,
+                "REG2": 42
+            }
+        }, {
+            "id": 4,
+            "listofcandidates_id": 1,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 6,
+                "REG3": 5,
+                "REG1": 0,
+                "REG2": 0
+            }
+        }, {
+            "id": 5,
+            "listofcandidates_id": 1,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 23,
+                "REG3": 47,
+                "REG1": 4,
+                "REG2": 4
+            }
+        }, {
+            "id": 6,
+            "listofcandidates_id": 2,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 106,
+                "REG3": 243,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 7,
+            "listofcandidates_id": 2,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 132,
+                "REG3": -21,
+                "REG1": 203,
+                "REG2": 203
+            }
+        }, {
+            "id": 8,
+            "listofcandidates_id": 2,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": 127,
+                "REG1": 15,
+                "REG2": 15
+            }
+        }, {
+            "id": 9,
+            "listofcandidates_id": 2,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 25,
+                "REG3": 0,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 10,
+            "listofcandidates_id": 2,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 21,
+                "REG3": 35,
+                "REG1": 8,
+                "REG2": 8
+            }
+        }, {
+            "id": 11,
+            "listofcandidates_id": 3,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 256,
+                "REG3": 651,
+                "REG1": 53,
+                "REG2": 53
+            }
+        }, {
+            "id": 12,
+            "listofcandidates_id": 3,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 330,
+                "REG3": 895,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 13,
+            "listofcandidates_id": 3,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 131,
+                "REG3": -327,
+                "REG1": 354,
+                "REG2": 354
+            }
+        }, {
+            "id": 14,
+            "listofcandidates_id": 3,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 73,
+                "REG3": 105,
+                "REG1": 51,
+                "REG2": 51
+            }
+        }, {
+            "id": 15,
+            "listofcandidates_id": 3,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 6,
+                "REG3": 7,
+                "REG1": 0,
+                "REG2": 0
+            }
+        }, {
+            "id": 16,
+            "listofcandidates_id": 4,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 357,
+                "REG3": 254,
+                "REG1": 403,
+                "REG2": 403
+            }
+        }, {
+            "id": 17,
+            "listofcandidates_id": 4,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 275,
+                "REG3": 406,
+                "REG1": 203,
+                "REG2": 203
+            }
+        }, {
+            "id": 18,
+            "listofcandidates_id": 4,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 81,
+                "REG3": 190,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 19,
+            "listofcandidates_id": 4,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 140,
+                "REG3": 320,
+                "REG1": 44,
+                "REG2": 44
+            }
+        }, {
+            "id": 20,
+            "listofcandidates_id": 4,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 115,
+                "REG3": 209,
+                "REG1": 61,
+                "REG2": 61
+            }
+        }, {
+            "id": 21,
+            "listofcandidates_id": 5,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 73,
+                "REG3": -33,
+                "REG1": 120,
+                "REG2": 120
+            }
+        }, {
+            "id": 22,
+            "listofcandidates_id": 5,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 43,
+                "REG3": -145,
+                "REG1": 131,
+                "REG2": 131
+            }
+        }, {
+            "id": 23,
+            "listofcandidates_id": 5,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 51,
+                "REG3": 20,
+                "REG1": 60,
+                "REG2": 60
+            }
+        }, {
+            "id": 24,
+            "listofcandidates_id": 5,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 23,
+                "REG3": 34,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 25,
+            "listofcandidates_id": 5,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 19,
+                "REG3": 16,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 26,
+            "listofcandidates_id": 6,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 91,
+                "REG3": 170,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 27,
+            "listofcandidates_id": 6,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 122,
+                "REG3": 210,
+                "REG1": 71,
+                "REG2": 71
+            }
+        }, {
+            "id": 28,
+            "listofcandidates_id": 6,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 129,
+                "REG3": 147,
+                "REG1": 114,
+                "REG2": 114
+            }
+        }, {
+            "id": 29,
+            "listofcandidates_id": 6,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 46,
+                "REG3": 77,
+                "REG1": 24,
+                "REG2": 24
+            }
+        }, {
+            "id": 30,
+            "listofcandidates_id": 6,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 53,
+                "REG3": 121,
+                "REG1": 13,
+                "REG2": 13
+            }
+        }, {
+            "id": 31,
+            "listofcandidates_id": 7,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 375,
+                "REG3": -36,
+                "REG1": 574,
+                "REG2": 574
+            }
+        }, {
+            "id": 32,
+            "listofcandidates_id": 7,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 306,
+                "REG3": -356,
+                "REG1": 631,
+                "REG2": 631
+            }
+        }, {
+            "id": 33,
+            "listofcandidates_id": 7,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 106,
+                "REG3": 264,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 34,
+            "listofcandidates_id": 7,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 157,
+                "REG3": 254,
+                "REG1": 103,
+                "REG2": 103
+            }
+        }, {
+            "id": 35,
+            "listofcandidates_id": 7,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 49,
+                "REG3": 105,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 36,
+            "listofcandidates_id": 8,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 231,
+                "REG3": 235,
+                "REG1": 223,
+                "REG2": 223
+            }
+        }, {
+            "id": 37,
+            "listofcandidates_id": 8,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 156,
+                "REG3": 21,
+                "REG1": 218,
+                "REG2": 218
+            }
+        }, {
+            "id": 38,
+            "listofcandidates_id": 8,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 106,
+                "REG3": 98,
+                "REG1": 104,
+                "REG2": 104
+            }
+        }, {
+            "id": 39,
+            "listofcandidates_id": 8,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 100,
+                "REG3": 79,
+                "REG1": 105,
+                "REG2": 105
+            }
+        }, {
+            "id": 40,
+            "listofcandidates_id": 8,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 326,
+                "REG3": 741,
+                "REG1": 113,
+                "REG2": 113
+            }
+        }, {
+            "id": 41,
+            "listofcandidates_id": 9,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": 127,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 42,
+            "listofcandidates_id": 9,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 38,
+                "REG3": 41,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 43,
+            "listofcandidates_id": 9,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 23,
+                "REG3": 45,
+                "REG1": 5,
+                "REG2": 5
+            }
+        }, {
+            "id": 44,
+            "listofcandidates_id": 9,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 50,
+                "REG3": 133,
+                "REG1": 2,
+                "REG2": 2
+            }
+        }, {
+            "id": 45,
+            "listofcandidates_id": 9,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 18,
+                "REG3": 40,
+                "REG1": 0,
+                "REG2": 0
+            }
+        }, {
+            "id": 46,
+            "listofcandidates_id": 10,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 181,
+                "REG3": 34,
+                "REG1": 248,
+                "REG2": 248
+            }
+        }, {
+            "id": 47,
+            "listofcandidates_id": 10,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 29,
+                "REG3": -220,
+                "REG1": 147,
+                "REG2": 147
+            }
+        }, {
+            "id": 48,
+            "listofcandidates_id": 10,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 85,
+                "REG3": 17,
+                "REG1": 112,
+                "REG2": 112
+            }
+        }, {
+            "id": 49,
+            "listofcandidates_id": 10,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 91,
+                "REG3": 186,
+                "REG1": 37,
+                "REG2": 37
+            }
+        }, {
+            "id": 50,
+            "listofcandidates_id": 10,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 43,
+                "REG3": 26,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 51,
+            "listofcandidates_id": 11,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 416,
+                "REG3": 657,
+                "REG1": 289,
+                "REG2": 289
+            }
+        }, {
+            "id": 52,
+            "listofcandidates_id": 11,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 316,
+                "REG3": 255,
+                "REG1": 341,
+                "REG2": 341
+            }
+        }, {
+            "id": 53,
+            "listofcandidates_id": 11,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 126,
+                "REG3": 141,
+                "REG1": 112,
+                "REG2": 112
+            }
+        }, {
+            "id": 54,
+            "listofcandidates_id": 11,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 156,
+                "REG3": 213,
+                "REG1": 121,
+                "REG2": 121
+            }
+        }, {
+            "id": 55,
+            "listofcandidates_id": 11,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 55,
+                "REG3": -23,
+                "REG1": 87,
+                "REG2": 87
+            }
+        }, {
+            "id": 56,
+            "listofcandidates_id": 12,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 349,
+                "REG3": 321,
+                "REG1": 357,
+                "REG2": 357
+            }
+        }, {
+            "id": 57,
+            "listofcandidates_id": 12,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 409,
+                "REG3": 592,
+                "REG1": 312,
+                "REG2": 312
+            }
+        }, {
+            "id": 58,
+            "listofcandidates_id": 12,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 227,
+                "REG3": 242,
+                "REG1": 214,
+                "REG2": 214
+            }
+        }, {
+            "id": 59,
+            "listofcandidates_id": 12,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 80,
+                "REG3": 49,
+                "REG1": 89,
+                "REG2": 89
+            }
+        }, {
+            "id": 60,
+            "listofcandidates_id": 12,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 146,
+                "REG3": 50,
+                "REG1": 187,
+                "REG2": 187
+            }
+        }, {
+            "id": 61,
+            "listofcandidates_id": 13,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 46,
+                "REG3": -3,
+                "REG1": 65,
+                "REG2": 65
+            }
+        }, {
+            "id": 62,
+            "listofcandidates_id": 13,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 65,
+                "REG3": -60,
+                "REG1": 121,
+                "REG2": 121
+            }
+        }, {
+            "id": 63,
+            "listofcandidates_id": 13,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 54,
+                "REG3": -74,
+                "REG1": 112,
+                "REG2": 112
+            }
+        }, {
+            "id": 64,
+            "listofcandidates_id": 13,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 20,
+                "REG3": 24,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 65,
+            "listofcandidates_id": 13,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 11,
+                "REG3": -20,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 66,
+            "listofcandidates_id": 14,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 168,
+                "REG3": -9,
+                "REG1": 251,
+                "REG2": 251
+            }
+        }, {
+            "id": 67,
+            "listofcandidates_id": 14,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 81,
+                "REG3": -165,
+                "REG1": 198,
+                "REG2": 198
+            }
+        }, {
+            "id": 68,
+            "listofcandidates_id": 14,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 63,
+                "REG3": 62,
+                "REG1": 58,
+                "REG2": 58
+            }
+        }, {
+            "id": 69,
+            "listofcandidates_id": 14,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 13,
+                "REG3": 10,
+                "REG1": 9,
+                "REG2": 9
+            }
+        }, {
+            "id": 70,
+            "listofcandidates_id": 14,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 27,
+                "REG3": 26,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 71,
+            "listofcandidates_id": 15,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 206,
+                "REG3": 365,
+                "REG1": 121,
+                "REG2": 121
+            }
+        }, {
+            "id": 72,
+            "listofcandidates_id": 15,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 315,
+                "REG3": 319,
+                "REG1": 307,
+                "REG2": 307
+            }
+        }, {
+            "id": 73,
+            "listofcandidates_id": 15,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 131,
+                "REG3": -21,
+                "REG1": 201,
+                "REG2": 201
+            }
+        }, {
+            "id": 74,
+            "listofcandidates_id": 15,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 29,
+                "REG3": 60,
+                "REG1": 8,
+                "REG2": 8
+            }
+        }, {
+            "id": 75,
+            "listofcandidates_id": 15,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 176,
+                "REG3": 433,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 76,
+            "listofcandidates_id": 16,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 431,
+                "REG3": 268,
+                "REG1": 507,
+                "REG2": 507
+            }
+        }, {
+            "id": 77,
+            "listofcandidates_id": 16,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 231,
+                "REG3": 374,
+                "REG1": 154,
+                "REG2": 154
+            }
+        }, {
+            "id": 78,
+            "listofcandidates_id": 16,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 307,
+                "REG3": 498,
+                "REG1": 206,
+                "REG2": 206
+            }
+        }, {
+            "id": 79,
+            "listofcandidates_id": 16,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 59,
+                "REG3": 57,
+                "REG1": 54,
+                "REG2": 54
+            }
+        }, {
+            "id": 80,
+            "listofcandidates_id": 16,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 99,
+                "REG3": 69,
+                "REG1": 108,
+                "REG2": 108
+            }
+        }, {
+            "id": 81,
+            "listofcandidates_id": 17,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 48,
+                "REG3": 88,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 82,
+            "listofcandidates_id": 17,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 44,
+                "REG3": 52,
+                "REG1": 34,
+                "REG2": 34
+            }
+        }, {
+            "id": 83,
+            "listofcandidates_id": 17,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 61,
+                "REG3": 108,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 84,
+            "listofcandidates_id": 17,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 15,
+                "REG3": 26,
+                "REG1": 3,
+                "REG2": 3
+            }
+        }, {
+            "id": 85,
+            "listofcandidates_id": 17,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 26,
+                "REG3": 41,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 86,
+            "listofcandidates_id": 18,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 70,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 87,
+            "listofcandidates_id": 18,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 63,
+                "REG3": 48,
+                "REG1": 65,
+                "REG2": 65
+            }
+        }, {
+            "id": 88,
+            "listofcandidates_id": 18,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 50,
+                "REG3": 55,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 89,
+            "listofcandidates_id": 18,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 297,
+                "REG3": 451,
+                "REG1": 213,
+                "REG2": 213
+            }
+        }, {
+            "id": 90,
+            "listofcandidates_id": 18,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 30,
+                "REG3": -18,
+                "REG1": 47,
+                "REG2": 47
+            }
+        }, {
+            "id": 91,
+            "listofcandidates_id": 19,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 400,
+                "REG3": 1125,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 92,
+            "listofcandidates_id": 19,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 358,
+                "REG3": 1009,
+                "REG1": 27,
+                "REG2": 27
+            }
+        }, {
+            "id": 93,
+            "listofcandidates_id": 19,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 106,
+                "REG3": 102,
+                "REG1": 102,
+                "REG2": 102
+            }
+        }, {
+            "id": 94,
+            "listofcandidates_id": 19,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 130,
+                "REG1": 15,
+                "REG2": 15
+            }
+        }, {
+            "id": 95,
+            "listofcandidates_id": 19,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 16,
+                "REG3": 21,
+                "REG1": 8,
+                "REG2": 8
+            }
+        }, {
+            "id": 96,
+            "listofcandidates_id": 20,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 292,
+                "REG3": 357,
+                "REG1": 254,
+                "REG2": 254
+            }
+        }, {
+            "id": 97,
+            "listofcandidates_id": 20,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 214,
+                "REG3": 405,
+                "REG1": 112,
+                "REG2": 112
+            }
+        }, {
+            "id": 98,
+            "listofcandidates_id": 20,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 218,
+                "REG3": -39,
+                "REG1": 341,
+                "REG2": 341
+            }
+        }, {
+            "id": 99,
+            "listofcandidates_id": 20,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 37,
+                "REG3": -8,
+                "REG1": 54,
+                "REG2": 54
+            }
+        }, {
+            "id": 100,
+            "listofcandidates_id": 20,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 58,
+                "REG3": -109,
+                "REG1": 135,
+                "REG2": 135
+            }
+        }, {
+            "id": 101,
+            "listofcandidates_id": 21,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 70,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 102,
+            "listofcandidates_id": 21,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 34,
+                "REG3": 27,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 103,
+            "listofcandidates_id": 21,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 58,
+                "REG3": 81,
+                "REG1": 40,
+                "REG2": 40
+            }
+        }, {
+            "id": 104,
+            "listofcandidates_id": 21,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 28,
+                "REG3": 36,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 105,
+            "listofcandidates_id": 21,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 11,
+                "REG3": 3,
+                "REG1": 9,
+                "REG2": 9
+            }
+        }, {
+            "id": 106,
+            "listofcandidates_id": 22,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 182,
+                "REG3": 127,
+                "REG1": 203,
+                "REG2": 203
+            }
+        }, {
+            "id": 107,
+            "listofcandidates_id": 22,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 103,
+                "REG3": 56,
+                "REG1": 121,
+                "REG2": 121
+            }
+        }, {
+            "id": 108,
+            "listofcandidates_id": 22,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 116,
+                "REG3": -165,
+                "REG1": 251,
+                "REG2": 251
+            }
+        }, {
+            "id": 109,
+            "listofcandidates_id": 22,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 30,
+                "REG3": -5,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 110,
+            "listofcandidates_id": 22,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 38,
+                "REG3": 13,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 111,
+            "listofcandidates_id": 23,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 426,
+                "REG3": 351,
+                "REG1": 457,
+                "REG2": 457
+            }
+        }, {
+            "id": 112,
+            "listofcandidates_id": 23,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 291,
+                "REG3": 432,
+                "REG1": 215,
+                "REG2": 215
+            }
+        }, {
+            "id": 113,
+            "listofcandidates_id": 23,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 290,
+                "REG3": 460,
+                "REG1": 198,
+                "REG2": 198
+            }
+        }, {
+            "id": 114,
+            "listofcandidates_id": 23,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 91,
+                "REG3": 196,
+                "REG1": 32,
+                "REG2": 32
+            }
+        }, {
+            "id": 115,
+            "listofcandidates_id": 23,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 37,
+                "REG3": 73,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 116,
+            "listofcandidates_id": 24,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 588,
+                "REG3": 1463,
+                "REG1": 145,
+                "REG2": 145
+            }
+        }, {
+            "id": 117,
+            "listofcandidates_id": 24,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 213,
+                "REG3": 380,
+                "REG1": 124,
+                "REG2": 124
+            }
+        }, {
+            "id": 118,
+            "listofcandidates_id": 24,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 132,
+                "REG3": 257,
+                "REG1": 64,
+                "REG2": 64
+            }
+        }, {
+            "id": 119,
+            "listofcandidates_id": 24,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 149,
+                "REG3": 344,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 120,
+            "listofcandidates_id": 24,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 27,
+                "REG3": 59,
+                "REG1": 5,
+                "REG2": 5
+            }
+        }, {
+            "id": 121,
+            "listofcandidates_id": 25,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 40,
+                "REG3": 17,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 122,
+            "listofcandidates_id": 25,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 44,
+                "REG3": 59,
+                "REG1": 30,
+                "REG2": 30
+            }
+        }, {
+            "id": 123,
+            "listofcandidates_id": 25,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 15,
+                "REG3": -3,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 124,
+            "listofcandidates_id": 25,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 16,
+                "REG3": 19,
+                "REG1": 8,
+                "REG2": 8
+            }
+        }, {
+            "id": 125,
+            "listofcandidates_id": 25,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 14,
+                "REG3": 1,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 126,
+            "listofcandidates_id": 26,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 221,
+                "REG3": 160,
+                "REG1": 245,
+                "REG2": 245
+            }
+        }, {
+            "id": 127,
+            "listofcandidates_id": 26,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 181,
+                "REG3": -36,
+                "REG1": 284,
+                "REG2": 284
+            }
+        }, {
+            "id": 128,
+            "listofcandidates_id": 26,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 58,
+                "REG3": 71,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 129,
+            "listofcandidates_id": 26,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 39,
+                "REG3": 62,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 130,
+            "listofcandidates_id": 26,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 10,
+                "REG3": 15,
+                "REG1": 2,
+                "REG2": 2
+            }
+        }, {
+            "id": 131,
+            "listofcandidates_id": 27,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 356,
+                "REG3": 975,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 132,
+            "listofcandidates_id": 27,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 189,
+                "REG3": 145,
+                "REG1": 204,
+                "REG2": 204
+            }
+        }, {
+            "id": 133,
+            "listofcandidates_id": 27,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 388,
+                "REG3": 949,
+                "REG1": 102,
+                "REG2": 102
+            }
+        }, {
+            "id": 134,
+            "listofcandidates_id": 27,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 125,
+                "REG3": 320,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 135,
+            "listofcandidates_id": 27,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 98,
+                "REG3": 254,
+                "REG1": 13,
+                "REG2": 13
+            }
+        }, {
+            "id": 136,
+            "listofcandidates_id": 28,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 442,
+                "REG3": 390,
+                "REG1": 461,
+                "REG2": 461
+            }
+        }, {
+            "id": 137,
+            "listofcandidates_id": 28,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 289,
+                "REG3": 151,
+                "REG1": 351,
+                "REG2": 351
+            }
+        }, {
+            "id": 138,
+            "listofcandidates_id": 28,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 225,
+                "REG3": 356,
+                "REG1": 153,
+                "REG2": 153
+            }
+        }, {
+            "id": 139,
+            "listofcandidates_id": 28,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 80,
+                "REG3": 55,
+                "REG1": 87,
+                "REG2": 87
+            }
+        }, {
+            "id": 140,
+            "listofcandidates_id": 28,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 27,
+                "REG3": 24,
+                "REG1": 23,
+                "REG2": 23
+            }
+        }, {
+            "id": 141,
+            "listofcandidates_id": 29,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 77,
+                "REG3": 122,
+                "REG1": 49,
+                "REG2": 49
+            }
+        }, {
+            "id": 142,
+            "listofcandidates_id": 29,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 75,
+                "REG3": 131,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 143,
+            "listofcandidates_id": 29,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 41,
+                "REG3": 38,
+                "REG1": 37,
+                "REG2": 37
+            }
+        }, {
+            "id": 144,
+            "listofcandidates_id": 29,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 32,
+                "REG3": 60,
+                "REG1": 11,
+                "REG2": 11
+            }
+        }, {
+            "id": 145,
+            "listofcandidates_id": 29,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 28,
+                "REG3": 40,
+                "REG1": 15,
+                "REG2": 15
+            }
+        }, {
+            "id": 146,
+            "listofcandidates_id": 30,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 97,
+                "REG3": 185,
+                "REG1": 46,
+                "REG2": 46
+            }
+        }, {
+            "id": 147,
+            "listofcandidates_id": 30,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": 43,
+                "REG1": 57,
+                "REG2": 57
+            }
+        }, {
+            "id": 148,
+            "listofcandidates_id": 30,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 82,
+                "REG3": 172,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 149,
+            "listofcandidates_id": 30,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 25,
+                "REG3": 31,
+                "REG1": 15,
+                "REG2": 15
+            }
+        }, {
+            "id": 150,
+            "listofcandidates_id": 30,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 12,
+                "REG3": 0,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 151,
+            "listofcandidates_id": 31,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 557,
+                "REG3": 756,
+                "REG1": 452,
+                "REG2": 452
+            }
+        }, {
+            "id": 152,
+            "listofcandidates_id": 31,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 370,
+                "REG3": 495,
+                "REG1": 301,
+                "REG2": 301
+            }
+        }, {
+            "id": 153,
+            "listofcandidates_id": 31,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 52,
+                "REG1": 54,
+                "REG2": 54
+            }
+        }, {
+            "id": 154,
+            "listofcandidates_id": 31,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 35,
+                "REG3": 11,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 155,
+            "listofcandidates_id": 31,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 54,
+                "REG3": 106,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 156,
+            "listofcandidates_id": 32,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 206,
+                "REG3": 403,
+                "REG1": 101,
+                "REG2": 101
+            }
+        }, {
+            "id": 157,
+            "listofcandidates_id": 32,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 532,
+                "REG3": 1151,
+                "REG1": 217,
+                "REG2": 217
+            }
+        }, {
+            "id": 158,
+            "listofcandidates_id": 32,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 188,
+                "REG3": 45,
+                "REG1": 254,
+                "REG2": 254
+            }
+        }, {
+            "id": 159,
+            "listofcandidates_id": 32,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 115,
+                "REG3": 226,
+                "REG1": 53,
+                "REG2": 53
+            }
+        }, {
+            "id": 160,
+            "listofcandidates_id": 32,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 69,
+                "REG3": 152,
+                "REG1": 22,
+                "REG2": 22
+            }
+        }, {
+            "id": 161,
+            "listofcandidates_id": 33,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 107,
+                "REG3": 228,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 162,
+            "listofcandidates_id": 33,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 73,
+                "REG3": 46,
+                "REG1": 81,
+                "REG2": 81
+            }
+        }, {
+            "id": 163,
+            "listofcandidates_id": 33,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 37,
+                "REG3": 51,
+                "REG1": 23,
+                "REG2": 23
+            }
+        }, {
+            "id": 164,
+            "listofcandidates_id": 33,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 28,
+                "REG3": 36,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 165,
+            "listofcandidates_id": 33,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 21,
+                "REG3": 25,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 166,
+            "listofcandidates_id": 34,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 73,
+                "REG3": 146,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 167,
+            "listofcandidates_id": 34,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 79,
+                "REG3": 156,
+                "REG1": 34,
+                "REG2": 34
+            }
+        }, {
+            "id": 168,
+            "listofcandidates_id": 34,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 77,
+                "REG3": 136,
+                "REG1": 42,
+                "REG2": 42
+            }
+        }, {
+            "id": 169,
+            "listofcandidates_id": 34,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 50,
+                "REG3": 103,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 170,
+            "listofcandidates_id": 34,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 32,
+                "REG3": 55,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 171,
+            "listofcandidates_id": 35,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 366,
+                "REG3": 72,
+                "REG1": 507,
+                "REG2": 507
+            }
+        }, {
+            "id": 172,
+            "listofcandidates_id": 35,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 291,
+                "REG3": 18,
+                "REG1": 421,
+                "REG2": 421
+            }
+        }, {
+            "id": 173,
+            "listofcandidates_id": 35,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 130,
+                "REG3": -85,
+                "REG1": 231,
+                "REG2": 231
+            }
+        }, {
+            "id": 174,
+            "listofcandidates_id": 35,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": -21,
+                "REG1": 89,
+                "REG2": 89
+            }
+        }, {
+            "id": 175,
+            "listofcandidates_id": 35,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 19,
+                "REG3": 4,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 176,
+            "listofcandidates_id": 36,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 282,
+                "REG3": 217,
+                "REG1": 309,
+                "REG2": 309
+            }
+        }, {
+            "id": 177,
+            "listofcandidates_id": 36,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 313,
+                "REG3": 520,
+                "REG1": 204,
+                "REG2": 204
+            }
+        }, {
+            "id": 178,
+            "listofcandidates_id": 36,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 108,
+                "REG3": 59,
+                "REG1": 126,
+                "REG2": 126
+            }
+        }, {
+            "id": 179,
+            "listofcandidates_id": 36,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 138,
+                "REG3": 141,
+                "REG1": 131,
+                "REG2": 131
+            }
+        }, {
+            "id": 180,
+            "listofcandidates_id": 36,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 61,
+                "REG3": 8,
+                "REG1": 81,
+                "REG2": 81
+            }
+        }, {
+            "id": 181,
+            "listofcandidates_id": 37,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 38,
+                "REG3": 16,
+                "REG1": 42,
+                "REG2": 42
+            }
+        }, {
+            "id": 182,
+            "listofcandidates_id": 37,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 42,
+                "REG3": 55,
+                "REG1": 29,
+                "REG2": 29
+            }
+        }, {
+            "id": 183,
+            "listofcandidates_id": 37,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 12,
+                "REG3": 1,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 184,
+            "listofcandidates_id": 37,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 13,
+                "REG3": -6,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 185,
+            "listofcandidates_id": 37,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 10,
+                "REG3": 7,
+                "REG1": 6,
+                "REG2": 6
+            }
+        }, {
+            "id": 186,
+            "listofcandidates_id": 38,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 90,
+                "REG3": 165,
+                "REG1": 47,
+                "REG2": 47
+            }
+        }, {
+            "id": 187,
+            "listofcandidates_id": 38,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 75,
+                "REG3": 136,
+                "REG1": 39,
+                "REG2": 39
+            }
+        }, {
+            "id": 188,
+            "listofcandidates_id": 38,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 48,
+                "REG3": 8,
+                "REG1": 62,
+                "REG2": 62
+            }
+        }, {
+            "id": 189,
+            "listofcandidates_id": 38,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 45,
+                "REG3": 60,
+                "REG1": 32,
+                "REG2": 32
+            }
+        }, {
+            "id": 190,
+            "listofcandidates_id": 38,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 25,
+                "REG3": 55,
+                "REG1": 4,
+                "REG2": 4
+            }
+        }, {
+            "id": 191,
+            "listofcandidates_id": 39,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 235,
+                "REG3": 286,
+                "REG1": 203,
+                "REG2": 203
+            }
+        }, {
+            "id": 192,
+            "listofcandidates_id": 39,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 365,
+                "REG3": 801,
+                "REG1": 141,
+                "REG2": 141
+            }
+        }, {
+            "id": 193,
+            "listofcandidates_id": 39,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 84,
+                "REG3": 64,
+                "REG1": 88,
+                "REG2": 88
+            }
+        }, {
+            "id": 194,
+            "listofcandidates_id": 39,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 38,
+                "REG1": 61,
+                "REG2": 61
+            }
+        }, {
+            "id": 195,
+            "listofcandidates_id": 39,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 34,
+                "REG3": -7,
+                "REG1": 48,
+                "REG2": 48
+            }
+        }, {
+            "id": 196,
+            "listofcandidates_id": 40,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 320,
+                "REG3": 434,
+                "REG1": 257,
+                "REG2": 257
+            }
+        }, {
+            "id": 197,
+            "listofcandidates_id": 40,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 310,
+                "REG3": 381,
+                "REG1": 268,
+                "REG2": 268
+            }
+        }, {
+            "id": 198,
+            "listofcandidates_id": 40,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 104,
+                "REG3": 91,
+                "REG1": 104,
+                "REG2": 104
+            }
+        }, {
+            "id": 199,
+            "listofcandidates_id": 40,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 108,
+                "REG3": 114,
+                "REG1": 98,
+                "REG2": 98
+            }
+        }, {
+            "id": 200,
+            "listofcandidates_id": 40,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 80,
+                "REG3": 74,
+                "REG1": 76,
+                "REG2": 76
+            }
+        }, {
+            "id": 201,
+            "listofcandidates_id": 41,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 48,
+                "REG3": 49,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 202,
+            "listofcandidates_id": 41,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": 112,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 203,
+            "listofcandidates_id": 41,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 40,
+                "REG3": 23,
+                "REG1": 42,
+                "REG2": 42
+            }
+        }, {
+            "id": 204,
+            "listofcandidates_id": 41,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 6,
+                "REG3": 5,
+                "REG1": 0,
+                "REG2": 0
+            }
+        }, {
+            "id": 205,
+            "listofcandidates_id": 41,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 23,
+                "REG3": 47,
+                "REG1": 4,
+                "REG2": 4
+            }
+        }, {
+            "id": 206,
+            "listofcandidates_id": 42,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 106,
+                "REG3": 243,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 207,
+            "listofcandidates_id": 42,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 132,
+                "REG3": -21,
+                "REG1": 203,
+                "REG2": 203
+            }
+        }, {
+            "id": 208,
+            "listofcandidates_id": 42,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": 127,
+                "REG1": 15,
+                "REG2": 15
+            }
+        }, {
+            "id": 209,
+            "listofcandidates_id": 42,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 25,
+                "REG3": 0,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 210,
+            "listofcandidates_id": 42,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 21,
+                "REG3": 35,
+                "REG1": 8,
+                "REG2": 8
+            }
+        }, {
+            "id": 211,
+            "listofcandidates_id": 43,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 256,
+                "REG3": 651,
+                "REG1": 53,
+                "REG2": 53
+            }
+        }, {
+            "id": 212,
+            "listofcandidates_id": 43,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 330,
+                "REG3": 895,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 213,
+            "listofcandidates_id": 43,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 131,
+                "REG3": -327,
+                "REG1": 354,
+                "REG2": 354
+            }
+        }, {
+            "id": 214,
+            "listofcandidates_id": 43,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 73,
+                "REG3": 105,
+                "REG1": 51,
+                "REG2": 51
+            }
+        }, {
+            "id": 215,
+            "listofcandidates_id": 43,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 6,
+                "REG3": 7,
+                "REG1": 0,
+                "REG2": 0
+            }
+        }, {
+            "id": 216,
+            "listofcandidates_id": 44,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 357,
+                "REG3": 254,
+                "REG1": 403,
+                "REG2": 403
+            }
+        }, {
+            "id": 217,
+            "listofcandidates_id": 44,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 275,
+                "REG3": 406,
+                "REG1": 203,
+                "REG2": 203
+            }
+        }, {
+            "id": 218,
+            "listofcandidates_id": 44,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 81,
+                "REG3": 190,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 219,
+            "listofcandidates_id": 44,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 140,
+                "REG3": 320,
+                "REG1": 44,
+                "REG2": 44
+            }
+        }, {
+            "id": 220,
+            "listofcandidates_id": 44,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 115,
+                "REG3": 209,
+                "REG1": 61,
+                "REG2": 61
+            }
+        }, {
+            "id": 221,
+            "listofcandidates_id": 45,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 73,
+                "REG3": -33,
+                "REG1": 120,
+                "REG2": 120
+            }
+        }, {
+            "id": 222,
+            "listofcandidates_id": 45,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 43,
+                "REG3": -145,
+                "REG1": 131,
+                "REG2": 131
+            }
+        }, {
+            "id": 223,
+            "listofcandidates_id": 45,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 51,
+                "REG3": 20,
+                "REG1": 60,
+                "REG2": 60
+            }
+        }, {
+            "id": 224,
+            "listofcandidates_id": 45,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 23,
+                "REG3": 34,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 225,
+            "listofcandidates_id": 45,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 19,
+                "REG3": 16,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 226,
+            "listofcandidates_id": 46,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 91,
+                "REG3": 170,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 227,
+            "listofcandidates_id": 46,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 122,
+                "REG3": 210,
+                "REG1": 71,
+                "REG2": 71
+            }
+        }, {
+            "id": 228,
+            "listofcandidates_id": 46,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 129,
+                "REG3": 147,
+                "REG1": 114,
+                "REG2": 114
+            }
+        }, {
+            "id": 229,
+            "listofcandidates_id": 46,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 46,
+                "REG3": 77,
+                "REG1": 24,
+                "REG2": 24
+            }
+        }, {
+            "id": 230,
+            "listofcandidates_id": 46,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 53,
+                "REG3": 121,
+                "REG1": 13,
+                "REG2": 13
+            }
+        }, {
+            "id": 231,
+            "listofcandidates_id": 47,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 375,
+                "REG3": -36,
+                "REG1": 574,
+                "REG2": 574
+            }
+        }, {
+            "id": 232,
+            "listofcandidates_id": 47,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 306,
+                "REG3": -356,
+                "REG1": 631,
+                "REG2": 631
+            }
+        }, {
+            "id": 233,
+            "listofcandidates_id": 47,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 106,
+                "REG3": 264,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 234,
+            "listofcandidates_id": 47,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 157,
+                "REG3": 254,
+                "REG1": 103,
+                "REG2": 103
+            }
+        }, {
+            "id": 235,
+            "listofcandidates_id": 47,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 49,
+                "REG3": 105,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 236,
+            "listofcandidates_id": 48,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 231,
+                "REG3": 235,
+                "REG1": 223,
+                "REG2": 223
+            }
+        }, {
+            "id": 237,
+            "listofcandidates_id": 48,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 156,
+                "REG3": 21,
+                "REG1": 218,
+                "REG2": 218
+            }
+        }, {
+            "id": 238,
+            "listofcandidates_id": 48,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 106,
+                "REG3": 98,
+                "REG1": 104,
+                "REG2": 104
+            }
+        }, {
+            "id": 239,
+            "listofcandidates_id": 48,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 100,
+                "REG3": 79,
+                "REG1": 105,
+                "REG2": 105
+            }
+        }, {
+            "id": 240,
+            "listofcandidates_id": 48,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 326,
+                "REG3": 741,
+                "REG1": 113,
+                "REG2": 113
+            }
+        }, {
+            "id": 241,
+            "listofcandidates_id": 49,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": 127,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 242,
+            "listofcandidates_id": 49,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 38,
+                "REG3": 41,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 243,
+            "listofcandidates_id": 49,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 23,
+                "REG3": 45,
+                "REG1": 5,
+                "REG2": 5
+            }
+        }, {
+            "id": 244,
+            "listofcandidates_id": 49,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 50,
+                "REG3": 133,
+                "REG1": 2,
+                "REG2": 2
+            }
+        }, {
+            "id": 245,
+            "listofcandidates_id": 49,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 18,
+                "REG3": 40,
+                "REG1": 0,
+                "REG2": 0
+            }
+        }, {
+            "id": 246,
+            "listofcandidates_id": 50,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 181,
+                "REG3": 34,
+                "REG1": 248,
+                "REG2": 248
+            }
+        }, {
+            "id": 247,
+            "listofcandidates_id": 50,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 29,
+                "REG3": -220,
+                "REG1": 147,
+                "REG2": 147
+            }
+        }, {
+            "id": 248,
+            "listofcandidates_id": 50,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 85,
+                "REG3": 17,
+                "REG1": 112,
+                "REG2": 112
+            }
+        }, {
+            "id": 249,
+            "listofcandidates_id": 50,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 91,
+                "REG3": 186,
+                "REG1": 37,
+                "REG2": 37
+            }
+        }, {
+            "id": 250,
+            "listofcandidates_id": 50,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 43,
+                "REG3": 26,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 251,
+            "listofcandidates_id": 51,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 416,
+                "REG3": 657,
+                "REG1": 289,
+                "REG2": 289
+            }
+        }, {
+            "id": 252,
+            "listofcandidates_id": 51,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 316,
+                "REG3": 255,
+                "REG1": 341,
+                "REG2": 341
+            }
+        }, {
+            "id": 253,
+            "listofcandidates_id": 51,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 126,
+                "REG3": 141,
+                "REG1": 112,
+                "REG2": 112
+            }
+        }, {
+            "id": 254,
+            "listofcandidates_id": 51,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 156,
+                "REG3": 213,
+                "REG1": 121,
+                "REG2": 121
+            }
+        }, {
+            "id": 255,
+            "listofcandidates_id": 51,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 55,
+                "REG3": -23,
+                "REG1": 87,
+                "REG2": 87
+            }
+        }, {
+            "id": 256,
+            "listofcandidates_id": 52,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 349,
+                "REG3": 321,
+                "REG1": 357,
+                "REG2": 357
+            }
+        }, {
+            "id": 257,
+            "listofcandidates_id": 52,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 409,
+                "REG3": 592,
+                "REG1": 312,
+                "REG2": 312
+            }
+        }, {
+            "id": 258,
+            "listofcandidates_id": 52,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 227,
+                "REG3": 242,
+                "REG1": 214,
+                "REG2": 214
+            }
+        }, {
+            "id": 259,
+            "listofcandidates_id": 52,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 80,
+                "REG3": 49,
+                "REG1": 89,
+                "REG2": 89
+            }
+        }, {
+            "id": 260,
+            "listofcandidates_id": 52,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 146,
+                "REG3": 50,
+                "REG1": 187,
+                "REG2": 187
+            }
+        }, {
+            "id": 261,
+            "listofcandidates_id": 53,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 46,
+                "REG3": -3,
+                "REG1": 65,
+                "REG2": 65
+            }
+        }, {
+            "id": 262,
+            "listofcandidates_id": 53,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 65,
+                "REG3": -60,
+                "REG1": 121,
+                "REG2": 121
+            }
+        }, {
+            "id": 263,
+            "listofcandidates_id": 53,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 54,
+                "REG3": -74,
+                "REG1": 112,
+                "REG2": 112
+            }
+        }, {
+            "id": 264,
+            "listofcandidates_id": 53,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 20,
+                "REG3": 24,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 265,
+            "listofcandidates_id": 53,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 11,
+                "REG3": -20,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 266,
+            "listofcandidates_id": 54,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 168,
+                "REG3": -9,
+                "REG1": 251,
+                "REG2": 251
+            }
+        }, {
+            "id": 267,
+            "listofcandidates_id": 54,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 81,
+                "REG3": -165,
+                "REG1": 198,
+                "REG2": 198
+            }
+        }, {
+            "id": 268,
+            "listofcandidates_id": 54,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 63,
+                "REG3": 62,
+                "REG1": 58,
+                "REG2": 58
+            }
+        }, {
+            "id": 269,
+            "listofcandidates_id": 54,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 13,
+                "REG3": 10,
+                "REG1": 9,
+                "REG2": 9
+            }
+        }, {
+            "id": 270,
+            "listofcandidates_id": 54,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 27,
+                "REG3": 26,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 271,
+            "listofcandidates_id": 55,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 206,
+                "REG3": 365,
+                "REG1": 121,
+                "REG2": 121
+            }
+        }, {
+            "id": 272,
+            "listofcandidates_id": 55,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 315,
+                "REG3": 319,
+                "REG1": 307,
+                "REG2": 307
+            }
+        }, {
+            "id": 273,
+            "listofcandidates_id": 55,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 131,
+                "REG3": -21,
+                "REG1": 201,
+                "REG2": 201
+            }
+        }, {
+            "id": 274,
+            "listofcandidates_id": 55,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 29,
+                "REG3": 60,
+                "REG1": 8,
+                "REG2": 8
+            }
+        }, {
+            "id": 275,
+            "listofcandidates_id": 55,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 176,
+                "REG3": 433,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 276,
+            "listofcandidates_id": 56,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 431,
+                "REG3": 268,
+                "REG1": 507,
+                "REG2": 507
+            }
+        }, {
+            "id": 277,
+            "listofcandidates_id": 56,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 231,
+                "REG3": 374,
+                "REG1": 154,
+                "REG2": 154
+            }
+        }, {
+            "id": 278,
+            "listofcandidates_id": 56,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 307,
+                "REG3": 498,
+                "REG1": 206,
+                "REG2": 206
+            }
+        }, {
+            "id": 279,
+            "listofcandidates_id": 56,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 59,
+                "REG3": 57,
+                "REG1": 54,
+                "REG2": 54
+            }
+        }, {
+            "id": 280,
+            "listofcandidates_id": 56,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 99,
+                "REG3": 69,
+                "REG1": 108,
+                "REG2": 108
+            }
+        }, {
+            "id": 281,
+            "listofcandidates_id": 57,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 48,
+                "REG3": 88,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 282,
+            "listofcandidates_id": 57,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 44,
+                "REG3": 52,
+                "REG1": 34,
+                "REG2": 34
+            }
+        }, {
+            "id": 283,
+            "listofcandidates_id": 57,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 61,
+                "REG3": 108,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 284,
+            "listofcandidates_id": 57,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 15,
+                "REG3": 26,
+                "REG1": 3,
+                "REG2": 3
+            }
+        }, {
+            "id": 285,
+            "listofcandidates_id": 57,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 26,
+                "REG3": 41,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 286,
+            "listofcandidates_id": 58,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 70,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 287,
+            "listofcandidates_id": 58,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 63,
+                "REG3": 48,
+                "REG1": 65,
+                "REG2": 65
+            }
+        }, {
+            "id": 288,
+            "listofcandidates_id": 58,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 50,
+                "REG3": 55,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 289,
+            "listofcandidates_id": 58,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 297,
+                "REG3": 451,
+                "REG1": 213,
+                "REG2": 213
+            }
+        }, {
+            "id": 290,
+            "listofcandidates_id": 58,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 30,
+                "REG3": -18,
+                "REG1": 47,
+                "REG2": 47
+            }
+        }, {
+            "id": 291,
+            "listofcandidates_id": 59,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 400,
+                "REG3": 1125,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 292,
+            "listofcandidates_id": 59,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 358,
+                "REG3": 1009,
+                "REG1": 27,
+                "REG2": 27
+            }
+        }, {
+            "id": 293,
+            "listofcandidates_id": 59,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 106,
+                "REG3": 102,
+                "REG1": 102,
+                "REG2": 102
+            }
+        }, {
+            "id": 294,
+            "listofcandidates_id": 59,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 130,
+                "REG1": 15,
+                "REG2": 15
+            }
+        }, {
+            "id": 295,
+            "listofcandidates_id": 59,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 16,
+                "REG3": 21,
+                "REG1": 8,
+                "REG2": 8
+            }
+        }, {
+            "id": 296,
+            "listofcandidates_id": 60,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 292,
+                "REG3": 357,
+                "REG1": 254,
+                "REG2": 254
+            }
+        }, {
+            "id": 297,
+            "listofcandidates_id": 60,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 214,
+                "REG3": 405,
+                "REG1": 112,
+                "REG2": 112
+            }
+        }, {
+            "id": 298,
+            "listofcandidates_id": 60,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 218,
+                "REG3": -39,
+                "REG1": 341,
+                "REG2": 341
+            }
+        }, {
+            "id": 299,
+            "listofcandidates_id": 60,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 37,
+                "REG3": -8,
+                "REG1": 54,
+                "REG2": 54
+            }
+        }, {
+            "id": 300,
+            "listofcandidates_id": 60,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 58,
+                "REG3": -109,
+                "REG1": 135,
+                "REG2": 135
+            }
+        }, {
+            "id": 301,
+            "listofcandidates_id": 61,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 70,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 302,
+            "listofcandidates_id": 61,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 34,
+                "REG3": 27,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 303,
+            "listofcandidates_id": 61,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 58,
+                "REG3": 81,
+                "REG1": 40,
+                "REG2": 40
+            }
+        }, {
+            "id": 304,
+            "listofcandidates_id": 61,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 28,
+                "REG3": 36,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 305,
+            "listofcandidates_id": 61,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 11,
+                "REG3": 3,
+                "REG1": 9,
+                "REG2": 9
+            }
+        }, {
+            "id": 306,
+            "listofcandidates_id": 62,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 182,
+                "REG3": 127,
+                "REG1": 203,
+                "REG2": 203
+            }
+        }, {
+            "id": 307,
+            "listofcandidates_id": 62,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 103,
+                "REG3": 56,
+                "REG1": 121,
+                "REG2": 121
+            }
+        }, {
+            "id": 308,
+            "listofcandidates_id": 62,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 116,
+                "REG3": -165,
+                "REG1": 251,
+                "REG2": 251
+            }
+        }, {
+            "id": 309,
+            "listofcandidates_id": 62,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 30,
+                "REG3": -5,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 310,
+            "listofcandidates_id": 62,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 38,
+                "REG3": 13,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 311,
+            "listofcandidates_id": 63,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 426,
+                "REG3": 351,
+                "REG1": 457,
+                "REG2": 457
+            }
+        }, {
+            "id": 312,
+            "listofcandidates_id": 63,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 291,
+                "REG3": 432,
+                "REG1": 215,
+                "REG2": 215
+            }
+        }, {
+            "id": 313,
+            "listofcandidates_id": 63,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 290,
+                "REG3": 460,
+                "REG1": 198,
+                "REG2": 198
+            }
+        }, {
+            "id": 314,
+            "listofcandidates_id": 63,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 91,
+                "REG3": 196,
+                "REG1": 32,
+                "REG2": 32
+            }
+        }, {
+            "id": 315,
+            "listofcandidates_id": 63,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 37,
+                "REG3": 73,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 316,
+            "listofcandidates_id": 64,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 588,
+                "REG3": 1463,
+                "REG1": 145,
+                "REG2": 145
+            }
+        }, {
+            "id": 317,
+            "listofcandidates_id": 64,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 213,
+                "REG3": 380,
+                "REG1": 124,
+                "REG2": 124
+            }
+        }, {
+            "id": 318,
+            "listofcandidates_id": 64,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 132,
+                "REG3": 257,
+                "REG1": 64,
+                "REG2": 64
+            }
+        }, {
+            "id": 319,
+            "listofcandidates_id": 64,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 149,
+                "REG3": 344,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 320,
+            "listofcandidates_id": 64,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 27,
+                "REG3": 59,
+                "REG1": 5,
+                "REG2": 5
+            }
+        }, {
+            "id": 321,
+            "listofcandidates_id": 65,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 40,
+                "REG3": 17,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 322,
+            "listofcandidates_id": 65,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 44,
+                "REG3": 59,
+                "REG1": 30,
+                "REG2": 30
+            }
+        }, {
+            "id": 323,
+            "listofcandidates_id": 65,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 15,
+                "REG3": -3,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 324,
+            "listofcandidates_id": 65,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 16,
+                "REG3": 19,
+                "REG1": 8,
+                "REG2": 8
+            }
+        }, {
+            "id": 325,
+            "listofcandidates_id": 65,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 14,
+                "REG3": 1,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 326,
+            "listofcandidates_id": 66,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 221,
+                "REG3": 160,
+                "REG1": 245,
+                "REG2": 245
+            }
+        }, {
+            "id": 327,
+            "listofcandidates_id": 66,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 181,
+                "REG3": -36,
+                "REG1": 284,
+                "REG2": 284
+            }
+        }, {
+            "id": 328,
+            "listofcandidates_id": 66,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 58,
+                "REG3": 71,
+                "REG1": 45,
+                "REG2": 45
+            }
+        }, {
+            "id": 329,
+            "listofcandidates_id": 66,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 39,
+                "REG3": 62,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 330,
+            "listofcandidates_id": 66,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 10,
+                "REG3": 15,
+                "REG1": 2,
+                "REG2": 2
+            }
+        }, {
+            "id": 331,
+            "listofcandidates_id": 67,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 356,
+                "REG3": 975,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 332,
+            "listofcandidates_id": 67,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 189,
+                "REG3": 145,
+                "REG1": 204,
+                "REG2": 204
+            }
+        }, {
+            "id": 333,
+            "listofcandidates_id": 67,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 388,
+                "REG3": 949,
+                "REG1": 102,
+                "REG2": 102
+            }
+        }, {
+            "id": 334,
+            "listofcandidates_id": 67,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 125,
+                "REG3": 320,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 335,
+            "listofcandidates_id": 67,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 98,
+                "REG3": 254,
+                "REG1": 13,
+                "REG2": 13
+            }
+        }, {
+            "id": 336,
+            "listofcandidates_id": 68,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 442,
+                "REG3": 390,
+                "REG1": 461,
+                "REG2": 461
+            }
+        }, {
+            "id": 337,
+            "listofcandidates_id": 68,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 289,
+                "REG3": 151,
+                "REG1": 351,
+                "REG2": 351
+            }
+        }, {
+            "id": 338,
+            "listofcandidates_id": 68,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 225,
+                "REG3": 356,
+                "REG1": 153,
+                "REG2": 153
+            }
+        }, {
+            "id": 339,
+            "listofcandidates_id": 68,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 80,
+                "REG3": 55,
+                "REG1": 87,
+                "REG2": 87
+            }
+        }, {
+            "id": 340,
+            "listofcandidates_id": 68,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 27,
+                "REG3": 24,
+                "REG1": 23,
+                "REG2": 23
+            }
+        }, {
+            "id": 341,
+            "listofcandidates_id": 69,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 77,
+                "REG3": 122,
+                "REG1": 49,
+                "REG2": 49
+            }
+        }, {
+            "id": 342,
+            "listofcandidates_id": 69,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 75,
+                "REG3": 131,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 343,
+            "listofcandidates_id": 69,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 41,
+                "REG3": 38,
+                "REG1": 37,
+                "REG2": 37
+            }
+        }, {
+            "id": 344,
+            "listofcandidates_id": 69,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 32,
+                "REG3": 60,
+                "REG1": 11,
+                "REG2": 11
+            }
+        }, {
+            "id": 345,
+            "listofcandidates_id": 69,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 28,
+                "REG3": 40,
+                "REG1": 15,
+                "REG2": 15
+            }
+        }, {
+            "id": 346,
+            "listofcandidates_id": 70,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 97,
+                "REG3": 185,
+                "REG1": 46,
+                "REG2": 46
+            }
+        }, {
+            "id": 347,
+            "listofcandidates_id": 70,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": 43,
+                "REG1": 57,
+                "REG2": 57
+            }
+        }, {
+            "id": 348,
+            "listofcandidates_id": 70,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 82,
+                "REG3": 172,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 349,
+            "listofcandidates_id": 70,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 25,
+                "REG3": 31,
+                "REG1": 15,
+                "REG2": 15
+            }
+        }, {
+            "id": 350,
+            "listofcandidates_id": 70,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 12,
+                "REG3": 0,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 351,
+            "listofcandidates_id": 71,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 557,
+                "REG3": 756,
+                "REG1": 452,
+                "REG2": 452
+            }
+        }, {
+            "id": 352,
+            "listofcandidates_id": 71,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 370,
+                "REG3": 495,
+                "REG1": 301,
+                "REG2": 301
+            }
+        }, {
+            "id": 353,
+            "listofcandidates_id": 71,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 52,
+                "REG1": 54,
+                "REG2": 54
+            }
+        }, {
+            "id": 354,
+            "listofcandidates_id": 71,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 35,
+                "REG3": 11,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 355,
+            "listofcandidates_id": 71,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 54,
+                "REG3": 106,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 356,
+            "listofcandidates_id": 72,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 206,
+                "REG3": 403,
+                "REG1": 101,
+                "REG2": 101
+            }
+        }, {
+            "id": 357,
+            "listofcandidates_id": 72,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 532,
+                "REG3": 1151,
+                "REG1": 217,
+                "REG2": 217
+            }
+        }, {
+            "id": 358,
+            "listofcandidates_id": 72,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 188,
+                "REG3": 45,
+                "REG1": 254,
+                "REG2": 254
+            }
+        }, {
+            "id": 359,
+            "listofcandidates_id": 72,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 115,
+                "REG3": 226,
+                "REG1": 53,
+                "REG2": 53
+            }
+        }, {
+            "id": 360,
+            "listofcandidates_id": 72,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 69,
+                "REG3": 152,
+                "REG1": 22,
+                "REG2": 22
+            }
+        }, {
+            "id": 361,
+            "listofcandidates_id": 73,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 107,
+                "REG3": 228,
+                "REG1": 41,
+                "REG2": 41
+            }
+        }, {
+            "id": 362,
+            "listofcandidates_id": 73,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 73,
+                "REG3": 46,
+                "REG1": 81,
+                "REG2": 81
+            }
+        }, {
+            "id": 363,
+            "listofcandidates_id": 73,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 37,
+                "REG3": 51,
+                "REG1": 23,
+                "REG2": 23
+            }
+        }, {
+            "id": 364,
+            "listofcandidates_id": 73,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 28,
+                "REG3": 36,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 365,
+            "listofcandidates_id": 73,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 21,
+                "REG3": 25,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 366,
+            "listofcandidates_id": 74,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 73,
+                "REG3": 146,
+                "REG1": 31,
+                "REG2": 31
+            }
+        }, {
+            "id": 367,
+            "listofcandidates_id": 74,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 79,
+                "REG3": 156,
+                "REG1": 34,
+                "REG2": 34
+            }
+        }, {
+            "id": 368,
+            "listofcandidates_id": 74,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 77,
+                "REG3": 136,
+                "REG1": 42,
+                "REG2": 42
+            }
+        }, {
+            "id": 369,
+            "listofcandidates_id": 74,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 50,
+                "REG3": 103,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 370,
+            "listofcandidates_id": 74,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 32,
+                "REG3": 55,
+                "REG1": 14,
+                "REG2": 14
+            }
+        }, {
+            "id": 371,
+            "listofcandidates_id": 75,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 366,
+                "REG3": 72,
+                "REG1": 507,
+                "REG2": 507
+            }
+        }, {
+            "id": 372,
+            "listofcandidates_id": 75,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 291,
+                "REG3": 18,
+                "REG1": 421,
+                "REG2": 421
+            }
+        }, {
+            "id": 373,
+            "listofcandidates_id": 75,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 130,
+                "REG3": -85,
+                "REG1": 231,
+                "REG2": 231
+            }
+        }, {
+            "id": 374,
+            "listofcandidates_id": 75,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 56,
+                "REG3": -21,
+                "REG1": 89,
+                "REG2": 89
+            }
+        }, {
+            "id": 375,
+            "listofcandidates_id": 75,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 19,
+                "REG3": 4,
+                "REG1": 21,
+                "REG2": 21
+            }
+        }, {
+            "id": 376,
+            "listofcandidates_id": 76,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 282,
+                "REG3": 217,
+                "REG1": 309,
+                "REG2": 309
+            }
+        }, {
+            "id": 377,
+            "listofcandidates_id": 76,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 313,
+                "REG3": 520,
+                "REG1": 204,
+                "REG2": 204
+            }
+        }, {
+            "id": 378,
+            "listofcandidates_id": 76,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 108,
+                "REG3": 59,
+                "REG1": 126,
+                "REG2": 126
+            }
+        }, {
+            "id": 379,
+            "listofcandidates_id": 76,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 138,
+                "REG3": 141,
+                "REG1": 131,
+                "REG2": 131
+            }
+        }, {
+            "id": 380,
+            "listofcandidates_id": 76,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 61,
+                "REG3": 8,
+                "REG1": 81,
+                "REG2": 81
+            }
+        }, {
+            "id": 381,
+            "listofcandidates_id": 77,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 38,
+                "REG3": 16,
+                "REG1": 42,
+                "REG2": 42
+            }
+        }, {
+            "id": 382,
+            "listofcandidates_id": 77,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 42,
+                "REG3": 55,
+                "REG1": 29,
+                "REG2": 29
+            }
+        }, {
+            "id": 383,
+            "listofcandidates_id": 77,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 12,
+                "REG3": 1,
+                "REG1": 12,
+                "REG2": 12
+            }
+        }, {
+            "id": 384,
+            "listofcandidates_id": 77,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 13,
+                "REG3": -6,
+                "REG1": 17,
+                "REG2": 17
+            }
+        }, {
+            "id": 385,
+            "listofcandidates_id": 77,
+            "party_joins": [{
+                    "party_id": 1
+                }],
+            "votes": {
+                "REG4": 10,
+                "REG3": 7,
+                "REG1": 6,
+                "REG2": 6
+            }
+        }, {
+            "id": 386,
+            "listofcandidates_id": 78,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 90,
+                "REG3": 165,
+                "REG1": 47,
+                "REG2": 47
+            }
+        }, {
+            "id": 387,
+            "listofcandidates_id": 78,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 75,
+                "REG3": 136,
+                "REG1": 39,
+                "REG2": 39
+            }
+        }, {
+            "id": 388,
+            "listofcandidates_id": 78,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 48,
+                "REG3": 8,
+                "REG1": 62,
+                "REG2": 62
+            }
+        }, {
+            "id": 389,
+            "listofcandidates_id": 78,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 45,
+                "REG3": 60,
+                "REG1": 32,
+                "REG2": 32
+            }
+        }, {
+            "id": 390,
+            "listofcandidates_id": 78,
+            "party_joins": [{
+                    "party_id": 2
+                }],
+            "votes": {
+                "REG4": 25,
+                "REG3": 55,
+                "REG1": 4,
+                "REG2": 4
+            }
+        }, {
+            "id": 391,
+            "listofcandidates_id": 79,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 235,
+                "REG3": 286,
+                "REG1": 203,
+                "REG2": 203
+            }
+        }, {
+            "id": 392,
+            "listofcandidates_id": 79,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 365,
+                "REG3": 801,
+                "REG1": 141,
+                "REG2": 141
+            }
+        }, {
+            "id": 393,
+            "listofcandidates_id": 79,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 84,
+                "REG3": 64,
+                "REG1": 88,
+                "REG2": 88
+            }
+        }, {
+            "id": 394,
+            "listofcandidates_id": 79,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 57,
+                "REG3": 38,
+                "REG1": 61,
+                "REG2": 61
+            }
+        }, {
+            "id": 395,
+            "listofcandidates_id": 79,
+            "party_joins": [{
+                    "party_id": 3
+                }],
+            "votes": {
+                "REG4": 34,
+                "REG3": -7,
+                "REG1": 48,
+                "REG2": 48
+            }
+        }, {
+            "id": 396,
+            "listofcandidates_id": 80,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 320,
+                "REG3": 434,
+                "REG1": 257,
+                "REG2": 257
+            }
+        }, {
+            "id": 397,
+            "listofcandidates_id": 80,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 310,
+                "REG3": 381,
+                "REG1": 268,
+                "REG2": 268
+            }
+        }, {
+            "id": 398,
+            "listofcandidates_id": 80,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 104,
+                "REG3": 91,
+                "REG1": 104,
+                "REG2": 104
+            }
+        }, {
+            "id": 399,
+            "listofcandidates_id": 80,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 108,
+                "REG3": 114,
+                "REG1": 98,
+                "REG2": 98
+            }
+        }, {
+            "id": 400,
+            "listofcandidates_id": 80,
+            "party_joins": [{
+                    "party_id": 4
+                }],
+            "votes": {
+                "REG4": 80,
+                "REG3": 74,
+                "REG1": 76,
+                "REG2": 76
+            }
+        }]
+}

@@ -8,7 +8,7 @@ export default {
     setExtendedData ({ commit }) {
         console.log('setExtendedData commit', commit);
         //console.log('setExtendedData commit()', commit());
-        var promise = axios.get('static/rawData/startjson13b.json')
+        var promise = axios.get('static/rawData/startjson14b.json')
     .then(function (response) {
       console.log('startjson-response', response);
       var extendedData = getExtendedData(response.data);

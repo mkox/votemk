@@ -48,8 +48,12 @@ define(['seatsDistribution'], function (seatsDistribution) {
 
     function beforeListCompare() {
         initData();
+        addListsToSBs();
+        addRegionsToSBs();
+        addRegionsToLists();
         addVotesCandidatesAndPartiesToListsOfCandidates();
-        addVotesAndListsToSBs();
+        addVotesToSBs();
+        setSeatsOfLists();
         addFirstSeatsToParties();
         addVotesForParties();
         addVotesByArea();
@@ -124,7 +128,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
     function rlsInitRankingListsInternational() {
         var rls = extendedData.ranking_lists;
         for (var r = 0; r < rls.length; r++) {
-            if (rls[r].area === 'international') {
+            if (rls[r].region === 'international') {
                 rls[r].regional_lists = [];
                 if (rls[r].current === true) {
                     extendedData.ranking_list_international = rls[r];
@@ -141,7 +145,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
         rli.regional_lists = [];
         for (var s = 0; s < rli.sb_ids.length; s++) {
             for (var r = 0; r < rls.length; r++) {
-                if (rls[r].area === 'regional') {
+                if (rls[r].region !== 'international') {
                     if (rls[r].sb_ids.indexOf(rli.sb_ids[s]) > -1) {
                         if (selectedRegionalRlIds.indexOf(rls[r].id) === -1) {
                             selectedRegionalRlIds.push(rls[r].id);
@@ -166,6 +170,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
             };
             listOfCandidates.candidates = [];
             listOfCandidates.parties = [];
+            listOfCandidates.region = '';
         }
     }
 
@@ -189,6 +194,42 @@ define(['seatsDistribution'], function (seatsDistribution) {
                 total: 0,
                 changed: 0
             };
+            sb.region = '';
+        }
+    }
+
+    /**
+     * Add lists to supervisory board.
+     * 
+     * @returns {undefined}
+     */
+    function addListsToSBs() {
+        var listsOfCandidats = extendedData.lists_of_candidates;
+        for (var i = 0; i < listsOfCandidats.length; i++) {
+            var sb = extendedData.supervisory_boards[iLOC[listsOfCandidats[i].supervisory_board_id]];
+            sb.lists.push(listsOfCandidats[i]);
+        }
+    }
+    
+    function addRegionsToSBs() {
+        var rls = extendedData.ranking_lists;
+        for (var r = 0; r < rls.length; r++) {
+            if(rls[r] !== 'international') {
+                var sbs = rls[r].supervisory_boards;
+                for (var s = 0; s < sbs.length; s++) {
+                    sbs[s].region = rls[r].region;
+                }
+            }
+        }
+    }
+    
+    function addRegionsToLists() {
+        var sbs = extendedData.supervisory_boards;
+        for (var s = 0; s < sbs.length; s++) {
+            var lists = sbs[s].lists;
+            for (var l = 0; l < lists.length; l++) {
+                lists[l].region = sbs[s].region;
+            }
         }
     }
 
@@ -204,8 +245,12 @@ define(['seatsDistribution'], function (seatsDistribution) {
         var candidatesInList = extendedData.candidates_in_list;
         for (var c = 0; c < candidatesInList.length; c++) {
             var listOfCandidates = extendedData.lists_of_candidates[iLOC[candidatesInList[c].listofcandidates_id]];
-            listOfCandidates.votes.international += candidatesInList[c].votes.international;
-            listOfCandidates.votes.regional += candidatesInList[c].votes.regional;
+            var votesInternational = 0;
+            for (var v in candidatesInList[c].votes) {
+                votesInternational += candidatesInList[c].votes[v];
+            }
+            listOfCandidates.votes.international += votesInternational;
+            listOfCandidates.votes.regional += candidatesInList[c].votes[listOfCandidates.region];
             listOfCandidates.candidates.push(candidatesInList[c]);
         }
 
@@ -228,20 +273,20 @@ define(['seatsDistribution'], function (seatsDistribution) {
     }
 
     /**
-     * Add votes and lists to supervisory board.
-     * Set first seats of lists.
+     * Add votes to supervisory board.
      * 
      * @returns {undefined}
      */
-    function addVotesAndListsToSBs() {
+    function addVotesToSBs() {
         var listsOfCandidats = extendedData.lists_of_candidates;
         for (var i = 0; i < listsOfCandidats.length; i++) {
             var sb = extendedData.supervisory_boards[iLOC[listsOfCandidats[i].supervisory_board_id]];
             sb.votes.international += listsOfCandidats[i].votes.international;
             sb.votes.regional += listsOfCandidats[i].votes.regional;
-            sb.lists.push(listsOfCandidats[i]);
         }
-
+    }
+    
+    function setSeatsOfLists() {
         var sbs = extendedData.supervisory_boards;
         for (var i = 0; i < sbs.length; i++) {
             setSeatsOfListsThroughSainteLague(sbs[i]);
@@ -253,7 +298,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
         for (var l = 0; l < lists.length; l++) {
             var list = lists[l];
             for (var a = 0; a < areas.length; a++) {
-                var candidates = sortCandidatesByVotes(list.candidates, areas[a]);
+                var candidates = sortCandidatesByVotes(list.candidates, areas[a], list.region);
                 for (var s = 0; s < list.seats[areas[a]]['first']; s++) {
                     if (typeof candidates[s] !== 'undefined') {
                         var candidate = candidates[s];
@@ -278,19 +323,32 @@ define(['seatsDistribution'], function (seatsDistribution) {
      * 
      * @param {type} candidates
      * @param {type} area
+     * @param {type} region
      * @returns {unresolved}
      */
-    function sortCandidatesByVotes(candidates, area) {
+    function sortCandidatesByVotes(candidates, area, region) {
         candidates.sort(function (valueA, valueB) {
             //return a-b
-            var a = valueA['votes'][area];
-            var b = valueB['votes'][area];
+            var a = getVotesOfAreaOfCandidate(valueA['votes'], area, region);
+            var b = getVotesOfAreaOfCandidate(valueB['votes'], area, region);
             if (a === b) {
                 return 0;
             }
             return (a < b) ? +1 : -1;
         });
         return candidates;
+    }
+    
+    function getVotesOfAreaOfCandidate(votes, area, region){
+        var areaVotes = 0;
+        if(area === 'international'){
+            for (var v in votes) {
+                areaVotes += votes[v];
+            }
+        } else {
+            areaVotes = votes[region];
+        }
+        return areaVotes;
     }
 
     /**
@@ -309,7 +367,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
         }
         return rlIds;
     }
-
+    
     function addVotesForParties() {
         var rli = extendedData.ranking_list_international;
         for (var a = 0; a < areas.length; a++) {
@@ -326,7 +384,15 @@ define(['seatsDistribution'], function (seatsDistribution) {
                             for (var pj = 0; pj < candidate.party_joins.length; pj++) {
                                 var party = extendedData.parties[iPa[candidate.party_joins[pj].party_id]];
                                 for (var a2 = 0; a2 < areas.length; a2++) {
-                                    party.votes[rls[r].id][areas[a2]] += candidate.votes[areas[a2]] / candidate.party_joins.length;
+                                    if(areas[a2] === 'international'){
+                                        var votesInternational = 0;
+                                        for (var v in candidate.votes) {
+                                            votesInternational += candidate.votes[v];
+                                        }
+                                        party.votes[rls[r].id][areas[a2]] += votesInternational / candidate.party_joins.length;
+                                    } else {
+                                        party.votes[rls[r].id][areas[a2]] += candidate.votes[list.region] / candidate.party_joins.length;
+                                    }
                                 }
                             }
                         }
@@ -472,7 +538,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
                         // Aber: mehr als 1 Sitz zusätzlich soll eine Liste auch nicht bekommen können.
 
                         var list = sb.lists[l];
-                        list.candidates = sortCandidatesByVotes(list.candidates, areas[a]);
+                        list.candidates = sortCandidatesByVotes(list.candidates, areas[a], list.region);
                         /*var partyJoins = list.candidates[0].party_joins; // Only the candidate is considered, that has the most votes in the list.
                          var listParties = [];
                          for (var pj = 0; pj < partyJoins.length; pj++) {
