@@ -19,15 +19,15 @@ function showSBBasics(state) {
     console.log('showSBBasics x200 ');
     
     var counter = 0;
-    /*while((state.extendedData.ranking_list_international === undefined) && (counter < 10)){
-    //while(state.extendedData.ranking_list_international === undefined){
+    /*while((state.extendedData.current_ranking_list === undefined) && (counter < 10)){
+    //while(state.extendedData.current_ranking_list === undefined){
         var seconds = new Date().getTime() / 1000;
         console.log('showSBBasics seconds: ', seconds);
         setTimeout(function(){ var a = 1; }, 1000);
         counter++;
     }*/
-    /*while((state.extendedData.ranking_list_international === undefined) && (counter < 10)){
-    //while(state.extendedData.ranking_list_international === undefined){
+    /*while((state.extendedData.current_ranking_list === undefined) && (counter < 10)){
+    //while(state.extendedData.current_ranking_list === undefined){
         setTimeout(function(){ var seconds = new Date().getTime() / 1000; console.log('showSBBasics seconds: ', seconds);}, 1000);
         counter++;
     }
@@ -37,7 +37,7 @@ function showSBBasics(state) {
 //    setTimeout(function(){ 
 //        var seconds = new Date().getTime() / 1000; console.log('showSBBasics seconds: ', seconds);
     
-        var sbs = state.extendedData.ranking_list_international.supervisory_boards;
+        var sbs = state.extendedData.current_ranking_list.supervisory_boards;
         console.log('showSBBasics sbs: ', sbs);
         for(var i = 0; i < sbs.length; i++) {
             sbs[i]["vue_seats"] = sbs[i].seats.total;

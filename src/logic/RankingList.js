@@ -131,15 +131,14 @@ define(['seatsDistribution'], function (seatsDistribution) {
             if (rls[r].region === 'international') {
                 rls[r].regional_lists = [];
                 if (rls[r].current === true) {
-                    extendedData.ranking_list_international = rls[r];
-                    addRegionalToInternationalList();
+                    extendedData.current_ranking_list = rls[r];
                 }
+                addRegionalToInternationalList(rls[r]);
             }
         }
     }
 
-    function addRegionalToInternationalList() {
-        var rli = extendedData.ranking_list_international;
+    function addRegionalToInternationalList(rli) {
         var rls = extendedData.ranking_lists;
         var selectedRegionalRlIds = [];
         rli.regional_lists = [];
@@ -369,7 +368,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
     }
     
     function addVotesForParties() {
-        var rli = extendedData.ranking_list_international;
+        var rli = extendedData.current_ranking_list;
         for (var a = 0; a < areas.length; a++) {
             var rls = [];
             areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
@@ -482,7 +481,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
      * @returns {undefined}
      */
     function tooManyOrTooLessSeats() {
-        var rli = extendedData.ranking_list_international;
+        var rli = extendedData.current_ranking_list;
         for (var a = 0; a < areas.length; a++) {
             var rls = [];
             areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
@@ -525,7 +524,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
     }
 
     function setListOfVoteDifferences() {
-        var rli = extendedData.ranking_list_international;
+        var rli = extendedData.current_ranking_list;
         for (var a = 0; a < areas.length; a++) {
             var rls = [];
             areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
@@ -632,7 +631,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
      */
     function setFilteredListOfVoteDifferences() {
         transferFirstSeatsToCorrectedSeatsInLists();
-        var rli = extendedData.ranking_list_international;
+        var rli = extendedData.current_ranking_list;
         for (var a = 0; a < areas.length; a++) {
             var rls = [];
             areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
@@ -778,7 +777,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
      * @returns {undefined}
      */
     function addVoteDifferencesToSBs() {
-        var rli = extendedData.ranking_list_international;
+        var rli = extendedData.current_ranking_list;
         for (var a = 0; a < areas.length; a++) {
             var rls = [];
             areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
