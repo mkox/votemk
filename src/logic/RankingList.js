@@ -303,9 +303,12 @@ define(['seatsDistribution'], function (seatsDistribution) {
                         var candidate = candidates[s];
                         for (var pj = 0; pj < candidate.party_joins.length; pj++) {
                             var party = extendedData.parties[iPa[candidate.party_joins[pj].party_id]];
-                            var rlIds = getRankinglistIdsBySBId(list.supervisory_board_id);
-                            for (var r = 0; r < rlIds.length; r++) {
-                                party.seats[rlIds[r]][areas[a]]['first'] += 1 / candidate.party_joins.length;
+                            var rls = getRankinglistsBySBId(list.supervisory_board_id);
+                            for (var r = 0; r < rls.length; r++) {
+                                var area = internationalOrRegional(rls[r].region);
+                                if(area === areas[a]){
+                                    party.seats[rls[r].id][areas[a]]['first'] += 1 / candidate.party_joins.length;
+                                }
                             }
                         }
                     } else {
@@ -351,21 +354,23 @@ define(['seatsDistribution'], function (seatsDistribution) {
     }
 
     /**
-     * Get ranking list ids of ranking lists that have the supervisory board of the given sbId.
+     * Get ranking lists that have the supervisory board of the given sbId.
      * 
      * @param {type} sbId
      * @returns {Array}
      */
-    function getRankinglistIdsBySBId(sbId) {
-        var rlIds = [];
+    function getRankinglistsBySBId(sbId) {
+        var rlsSelected = [];
         var rls = extendedData.ranking_lists;
         for (var r = 0; r < rls.length; r++) {
             if (rls[r].sb_ids.indexOf(sbId) > -1) {
-                rlIds.push(rls[r].id);
+                rlsSelected.push(rls[r]);
             }
         }
-        return rlIds;
+        return rlsSelected;
     }
+    
+    
     
     function addVotesForParties() {
         var rls = extendedData.ranking_lists;
