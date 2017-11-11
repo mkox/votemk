@@ -368,38 +368,45 @@ define(['seatsDistribution'], function (seatsDistribution) {
     }
     
     function addVotesForParties() {
-        var rli = extendedData.current_ranking_list;
-        for (var a = 0; a < areas.length; a++) {
-            var rls = [];
-            areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
-            for (var r = 0; r < rls.length; r++) {
-                for (var s = 0; s < rls[r].supervisory_boards.length; s++) {
-                    var sb = rls[r].supervisory_boards[s];
-                    for (var l = 0; l < sb.lists.length; l++) {
-                        var list = sb.lists[l];
+        var rls = extendedData.ranking_lists;
+        for (var r = 0; r < rls.length; r++) {
+            var area = internationalOrRegional(rls[r].region);
+            for (var s = 0; s < rls[r].supervisory_boards.length; s++) {
+                var sb = rls[r].supervisory_boards[s];
+                for (var l = 0; l < sb.lists.length; l++) {
+                    var list = sb.lists[l];
 
-                        for (var c = 0; c < list.candidates.length; c++) {
-                            var candidate = list.candidates[c];
-                            for (var pj = 0; pj < candidate.party_joins.length; pj++) {
-                                var party = extendedData.parties[iPa[candidate.party_joins[pj].party_id]];
-                                for (var a2 = 0; a2 < areas.length; a2++) {
-                                    if(areas[a2] === 'international'){
-                                        var votesInternational = 0;
-                                        for (var v in candidate.votes) {
-                                            votesInternational += candidate.votes[v];
-                                        }
-                                        party.votes[rls[r].id][areas[a2]] += votesInternational / candidate.party_joins.length;
-                                    } else {
-                                        party.votes[rls[r].id][areas[a2]] += candidate.votes[list.region] / candidate.party_joins.length;
-                                    }
+                    for (var c = 0; c < list.candidates.length; c++) {
+                        var candidate = list.candidates[c];
+                        for (var pj = 0; pj < candidate.party_joins.length; pj++) {
+                            var party = extendedData.parties[iPa[candidate.party_joins[pj].party_id]];
+                            if(area === 'international'){
+                                var votesInternational = 0;
+                                for (var v in candidate.votes) {
+                                    votesInternational += candidate.votes[v];
                                 }
+                                party.votes[rls[r].id][area] += votesInternational / candidate.party_joins.length;
+                            } else {
+                                party.votes[rls[r].id][area] += candidate.votes[list.region] / candidate.party_joins.length;
                             }
                         }
-
                     }
+
                 }
             }
         }
+    }
+    
+    function internationalOrRegional(region) {
+        var area = '';
+        if(region == ''){
+            alert('The region of a ranking list must not be empty!');
+        } else if(region == 'international') {
+            area = 'international';
+        } else {
+            area = 'regional';
+        }
+        return area;
     }
 
     function addVotesByArea() {
@@ -481,24 +488,21 @@ define(['seatsDistribution'], function (seatsDistribution) {
      * @returns {undefined}
      */
     function tooManyOrTooLessSeats() {
-        var rli = extendedData.current_ranking_list;
-        for (var a = 0; a < areas.length; a++) {
-            var rls = [];
-            areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
-            for (var r = 0; r < rls.length; r++) {
-                var rl = rls[r];
-                //var methodesOfSeatsDistribution = Ext.create('MyApp.logic.MethodesOfSeatsDistribution');
-                var sainteLague = seatsDistribution.voteBySainteLague(createPartiesWithVotesForRl(rl.id), rl.allConnectedSB[areas[a]]['votes'], rl.allConnectedSB[areas[a]]['seats'], areas[a], 'tooManyOrTooLessSeats');
-                //console.log('tooManyOrTooLessSeats() sainteLague: ', sainteLague);
-                for (var partyId in sainteLague) {
-                    var seatsCorrected = sainteLague[partyId];
-                    var party = extendedData.parties[iPa[partyId]];
-                    party['seats'][rl.id][areas[a]]['corrected'] += seatsCorrected;
-                    var seatsDifference = seatsCorrected - party['seats'][rl.id][areas[a]]['first'];
-                    party['seats'][rl.id][areas[a]]['differenceCounter'] += seatsDifference;
-                    if (seatsDifference > 0) {
-                        extendedData.ranking_lists[iRL[rl.id]].allConnectedSB[areas[a]].seatsToCorrect += seatsDifference;
-                    }
+        var rls = extendedData.ranking_lists;
+        for (var r = 0; r < rls.length; r++) {
+            var rl = rls[r];
+            var area = internationalOrRegional(rl.region);
+            //var methodesOfSeatsDistribution = Ext.create('MyApp.logic.MethodesOfSeatsDistribution');
+            var sainteLague = seatsDistribution.voteBySainteLague(createPartiesWithVotesForRl(rl.id), rl.allConnectedSB[area]['votes'], rl.allConnectedSB[area]['seats'], area, 'tooManyOrTooLessSeats');
+            //console.log('tooManyOrTooLessSeats() sainteLague: ', sainteLague);
+            for (var partyId in sainteLague) {
+                var seatsCorrected = sainteLague[partyId];
+                var party = extendedData.parties[iPa[partyId]];
+                party['seats'][rl.id][area]['corrected'] += seatsCorrected;
+                var seatsDifference = seatsCorrected - party['seats'][rl.id][area]['first'];
+                party['seats'][rl.id][area]['differenceCounter'] += seatsDifference;
+                if (seatsDifference > 0) {
+                    extendedData.ranking_lists[iRL[rl.id]].allConnectedSB[area].seatsToCorrect += seatsDifference;
                 }
             }
         }
@@ -524,84 +528,81 @@ define(['seatsDistribution'], function (seatsDistribution) {
     }
 
     function setListOfVoteDifferences() {
-        var rli = extendedData.current_ranking_list;
-        for (var a = 0; a < areas.length; a++) {
-            var rls = [];
-            areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
-            for (var r = 0; r < rls.length; r++) {
-                var rl = rls[r];
-                for (var s = 0; s < rl.supervisory_boards.length; s++) {
-                    var sb = rl.supervisory_boards[s];
+        var rls = extendedData.ranking_lists;
+        for (var r = 0; r < rls.length; r++) {
+            var rl = rls[r];
+            var area = internationalOrRegional(rl.region);
+            for (var s = 0; s < rl.supervisory_boards.length; s++) {
+                var sb = rl.supervisory_boards[s];
 
-                    for (var l = 0; l < sb.lists.length; l++) {// Was ist wenn es um mehrere Durchgänge einer Liste geht?
-                        // Aber: mehr als 1 Sitz zusätzlich soll eine Liste auch nicht bekommen können.
+                for (var l = 0; l < sb.lists.length; l++) {// Was ist wenn es um mehrere Durchgänge einer Liste geht?
+                    // Aber: mehr als 1 Sitz zusätzlich soll eine Liste auch nicht bekommen können.
 
-                        var list = sb.lists[l];
-                        list.candidates = sortCandidatesByVotes(list.candidates, areas[a], list.region);
-                        /*var partyJoins = list.candidates[0].party_joins; // Only the candidate is considered, that has the most votes in the list.
-                         var listParties = [];
-                         for (var pj = 0; pj < partyJoins.length; pj++) {
-                         listParties.push(extendedData.parties[iPa[partyJoins[pj].party_id]]);
-                         }*/
+                    var list = sb.lists[l];
+                    list.candidates = sortCandidatesByVotes(list.candidates, area, list.region);
+                    /*var partyJoins = list.candidates[0].party_joins; // Only the candidate is considered, that has the most votes in the list.
+                     var listParties = [];
+                     for (var pj = 0; pj < partyJoins.length; pj++) {
+                     listParties.push(extendedData.parties[iPa[partyJoins[pj].party_id]]);
+                     }*/
 
-                        var seatsDifferenceOfListParties = getSumOfSeatsDifferencesOfParties(list.parties, areas[a], rl.id);
-                        if (seatsDifferenceOfListParties >= 1) { // So the parties of this list have together at least 1 seat too few (concerning their seats in all supervisory boards of a rankinglist).
-                            //console.log('setListOfVoteDifferences(), list after "seatsDifferenceOfListParties >= 1": ', list);
-                            //console.log('setListOfVoteDifferences(), list.name: ', list.name);
-                            //console.log('setListOfVoteDifferences(), seatsDifferenceOfListParties: ', seatsDifferenceOfListParties);
-                            var votesToGetASeat = list.votes[areas[a]];
+                    var seatsDifferenceOfListParties = getSumOfSeatsDifferencesOfParties(list.parties, area, rl.id);
+                    if (seatsDifferenceOfListParties >= 1) { // So the parties of this list have together at least 1 seat too few (concerning their seats in all supervisory boards of a rankinglist).
+                        //console.log('setListOfVoteDifferences(), list after "seatsDifferenceOfListParties >= 1": ', list);
+                        //console.log('setListOfVoteDifferences(), list.name: ', list.name);
+                        //console.log('setListOfVoteDifferences(), seatsDifferenceOfListParties: ', seatsDifferenceOfListParties);
+                        var votesToGetASeat = list.votes[area];
 
-                            var seatsOfAList = list.seats.regional.first + list.seats.international.first;
-                            if (seatsOfAList > 0) {
-                                votesToGetASeat = votesToGetASeat / (list.seats[areas[a]].first + 1);
-                                // "+ 1": 
-                                // So that the division can not be by 0 
-                                // This is still possible when "$seatsOfAList > 0", because the code before "+ 1" only refers to 1 of 2 areas.
-                                // So that when there is already a seat, the division does not begin with "1", which would not change the number of votes to get a seat ($votesToGetASeat).
-                                // IS THIS PART OF C.1?
-                                // No! If a party has already a seat in a SB, it can not have an additional seat there through correction of seat distribution.
-                                // But this code makes possible: If this list/party has already a seat in this SB, it can get an other one under harder conditions than if it had not.
-                                // Because it is not part of C.1: This should be OPTIONAL.
+                        var seatsOfAList = list.seats.regional.first + list.seats.international.first;
+                        if (seatsOfAList > 0) {
+                            votesToGetASeat = votesToGetASeat / (list.seats[area].first + 1);
+                            // "+ 1": 
+                            // So that the division can not be by 0 
+                            // This is still possible when "$seatsOfAList > 0", because the code before "+ 1" only refers to 1 of 2 areas.
+                            // So that when there is already a seat, the division does not begin with "1", which would not change the number of votes to get a seat ($votesToGetASeat).
+                            // IS THIS PART OF C.1?
+                            // No! If a party has already a seat in a SB, it can not have an additional seat there through correction of seat distribution.
+                            // But this code makes possible: If this list/party has already a seat in this SB, it can get an other one under harder conditions than if it had not.
+                            // Because it is not part of C.1: This should be OPTIONAL.
+                        }
+
+                        for (var l2 = 0; l2 < sb.lists.length; l2++) {
+                            var list2 = sb.lists[l2];
+                            if (list2.id === list.id) {
+                                continue;
                             }
-
-                            for (var l2 = 0; l2 < sb.lists.length; l2++) {
-                                var list2 = sb.lists[l2];
-                                if (list2.id === list.id) {
-                                    continue;
+                            var seatsDifferenceOfList2Parties = getSumOfSeatsDifferencesOfParties(list2.parties, area, rl.id);
+                            if (seatsDifferenceOfList2Parties <= -1) { // So the parties of this list2 have together at least 1 seat too much (concerning their seats in all supervisory boards of a rankinglist).
+                                //console.log('setListOfVoteDifferences(), list2 after "seatsDifferenceOfList2Parties <= -1": ', list2);
+                                //console.log('setListOfVoteDifferences(), list2.name: ', list2.name);
+                                //console.log('setListOfVoteDifferences(), seatsDifferenceOfList2Parties: ', seatsDifferenceOfList2Parties);
+                                var usedVotesOfMList = list2.votes[area];
+                                if (list2.seats[area].first > 1) {
+                                    usedVotesOfMList = usedVotesOfMList / list2.seats[area].first;
                                 }
-                                var seatsDifferenceOfList2Parties = getSumOfSeatsDifferencesOfParties(list2.parties, areas[a], rl.id);
-                                if (seatsDifferenceOfList2Parties <= -1) { // So the parties of this list2 have together at least 1 seat too much (concerning their seats in all supervisory boards of a rankinglist).
-                                    //console.log('setListOfVoteDifferences(), list2 after "seatsDifferenceOfList2Parties <= -1": ', list2);
-                                    //console.log('setListOfVoteDifferences(), list2.name: ', list2.name);
-                                    //console.log('setListOfVoteDifferences(), seatsDifferenceOfList2Parties: ', seatsDifferenceOfList2Parties);
-                                    var usedVotesOfMList = list2.votes[areas[a]];
-                                    if (list2.seats[areas[a]].first > 1) {
-                                        usedVotesOfMList = usedVotesOfMList / list2.seats[areas[a]].first;
-                                    }
 
-                                    var voteDifference = {};
-                                    voteDifference.supervisoryBoard = sb;
-                                    voteDifference.listTooFew = list;
-                                    voteDifference.listTooMuch = list2;
-                                    voteDifference.difference = (usedVotesOfMList - votesToGetASeat) * 100 / usedVotesOfMList;
+                                var voteDifference = {};
+                                voteDifference.supervisoryBoard = sb;
+                                voteDifference.listTooFew = list;
+                                voteDifference.listTooMuch = list2;
+                                voteDifference.difference = (usedVotesOfMList - votesToGetASeat) * 100 / usedVotesOfMList;
 
-                                    rl.listOfVoteDifferences[areas[a]].push(voteDifference);
-                                    /*
-                                     $listOfVoteDifferences[$this->areas[a]][$j]['supervisoryBoard'] = $sb;
-                                     $listOfVoteDifferences[$this->areas[a]][$j]['tooFewSeats']['party'] = $listParty; //!! listParty nicht mehr verwendet
-                                     $listOfVoteDifferences[$this->areas[a]][$j]['tooFewSeats']['listOfCandidates'] = $list;
-                                     $listOfVoteDifferences[$this->areas[a]][$j]['tooMuchSeats']['party'] = $this->parties[$mParty]; 
-                                     // instead of $this->parties[$mParty]:  $listPartyForTooMuch could be used with the same result
-                                     $listOfVoteDifferences[$this->areas[a]][$j]['tooMuchSeats']['listOfCandidates'] = $listForTooMuch;
-                                     $listOfVoteDifferences[$this->areas[a]][$j]['difference'] = ($usedVotesOfMParty - $votesToGetASeat) * 100 / $usedVotesOfMParty;
-                                     */
-                                }
+                                rl.listOfVoteDifferences[area].push(voteDifference);
+                                /*
+                                 $listOfVoteDifferences[$this->areas[a]][$j]['supervisoryBoard'] = $sb;
+                                 $listOfVoteDifferences[$this->areas[a]][$j]['tooFewSeats']['party'] = $listParty; //!! listParty nicht mehr verwendet
+                                 $listOfVoteDifferences[$this->areas[a]][$j]['tooFewSeats']['listOfCandidates'] = $list;
+                                 $listOfVoteDifferences[$this->areas[a]][$j]['tooMuchSeats']['party'] = $this->parties[$mParty]; 
+                                 // instead of $this->parties[$mParty]:  $listPartyForTooMuch could be used with the same result
+                                 $listOfVoteDifferences[$this->areas[a]][$j]['tooMuchSeats']['listOfCandidates'] = $listForTooMuch;
+                                 $listOfVoteDifferences[$this->areas[a]][$j]['difference'] = ($usedVotesOfMParty - $votesToGetASeat) * 100 / $usedVotesOfMParty;
+                                 */
                             }
                         }
                     }
                 }
-                sortListOfVoteDifferences(rl.listOfVoteDifferences, areas[a]);
             }
+            sortListOfVoteDifferences(rl.listOfVoteDifferences, area);
         }
     }
 
@@ -631,114 +632,111 @@ define(['seatsDistribution'], function (seatsDistribution) {
      */
     function setFilteredListOfVoteDifferences() {
         transferFirstSeatsToCorrectedSeatsInLists();
-        var rli = extendedData.current_ranking_list;
-        for (var a = 0; a < areas.length; a++) {
-            var rls = [];
-            areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
-            for (var r = 0; r < rls.length; r++) {
-                var rl = rls[r];
-                var seatsToCorrect = {};
-                seatsToCorrect[areas[a]] = rl.allConnectedSB[areas[a]].seatsToCorrect;
+        var rls = extendedData.ranking_lists;
+        for (var r = 0; r < rls.length; r++) {
+            var rl = rls[r];
+            var area = internationalOrRegional(rl.region);
+            var seatsToCorrect = {};
+            seatsToCorrect[area] = rl.allConnectedSB[area].seatsToCorrect;
 
-                var listVD = rl.listOfVoteDifferences;
-                for (var vd = 0; vd < listVD[areas[a]].length; vd++) {
-                    var voteDifference = listVD[areas[a]][vd];
-                    if (seatsToCorrect[areas[a]] === 0) {
-                        listVD[areas[a]] = listVD[areas[a]].slice(0, vd);
-                        break;
-                    }
-
-                    //$partyWithTooFewSeats = $this->listOfVoteDifferences[$this->area[$i]][$j]['tooFewSeats']['party'];
-                    //$partyWithTooMuchSeats = $this->listOfVoteDifferences[$this->area[$i]][$j]['tooMuchSeats']['party'];
-
-                    //$seatsOfListWithTooMuchSeats = $this->listOfVoteDifferences[$this->area[$i]][$j]['tooMuchSeats']['listOfCandidates']->getSeats();
-                    //if($seatsOfListWithTooMuchSeats[$this->area[$i]]['corrected'] < 1){
-                    if (voteDifference.listTooMuch.seats[areas[a]].first === 0) {
-                        //$this->listOfVoteDifferences[$this->area[$i]][$j]['filterStatus'] = 2;
-                        voteDifference.filterStatus = 2;
-                        // [[If list with partiesWithTooMuchSeats has NOT at least 1 seat in this SB FOR THIS AREA.]]
-                        // (2) The LIST of the party with too MUCH seats has NOT at least 1 seat in this supervisory board for this area.
-                        continue;
-                    }
-
-                    if (voteDifference.listTooMuch.seats[areas[a]].corrected === 0) {
-                        //$this->listOfVoteDifferences[$this->area[$i]][$j]['filterStatus'] = 2;
-                        voteDifference.filterStatus = 3;
-                        // [[If list with partiesWithTooMuchSeats has NOT at least 1 seat in this SB FOR THIS AREA.]]
-                        // (3) The LIST of the party with too MUCH seats has NOT ANY MORE at least 1 seat in this supervisory board for this area.
-                        continue;
-                    }
-
-                    //$seatsOfPartyWithTooFewSeats = $partyWithTooFewSeats->getSeats();
-                    //if($seatsOfPartyWithTooFewSeats[$this->area[$i]]['differenceCounter'] < 1){
-                    var tooFewSeats = getSumOfSeatsDifferencesOfParties(voteDifference.listTooFew.parties, areas[a], rl.id);
-                    if (tooFewSeats < 1) {
-                        voteDifference.filterStatus = 4;
-                        // [ If list with partiesWithTooFewSeats has NOT too few seats now; it already got additional seats. ]
-                        // (4)The party with too FEW seats has NOT too few seats now; it already got additional seats.
-                        continue;
-                    }
-
-                    //$seatsOfPartyWithTooMuchSeats = $partyWithTooMuchSeats->getSeats();
-                    //if($seatsOfPartyWithTooMuchSeats[$this->area[$i]]['differenceCounter'] > -1){
-                    var tooMuchSeats = getSumOfSeatsDifferencesOfParties(voteDifference.listTooMuch.parties, areas[a], rl.id);
-                    if (tooMuchSeats > -1) {
-                        voteDifference.filterStatus = 5;
-                        // [ If list with partiesWithTooMuchSeats has NOT more seats than it should have any more; it has already given the seats that where too much. ]
-                        // (5) The party with too MUCH seats has NOT more seats than it should have any more; it has already given the seats that where too much. 
-                        continue;
-                    }
-
-                    //$seatsOfListWithTooFewSeats = $this->listOfVoteDifferences[$this->area[$i]][$j]['tooFewSeats']['listOfCandidates']->getSeats();
-
-                    //var seatsOfListWithTooFewSeatsFirst;
-                    var seatsOfListWithTooFewSeatsCorrected;
-                    if (areas[a] === 'international') {
-                        //$seatsOfListWithTooFewSeatsFirst = $seatsOfListWithTooFewSeats['regional']['first'] + $seatsOfListWithTooFewSeats['international']['first'];
-                        //$seatsOfListWithTooFewSeatsCorrected = $seatsOfListWithTooFewSeats['regional']['corrected'] + $seatsOfListWithTooFewSeats['international']['corrected'];
-                        seatsOfListWithTooFewSeatsCorrected = voteDifference.listTooFew.seats.regional.corrected + voteDifference.listTooFew.seats.international.corrected;
-                    } else {
-                        //console.log('setFilteredListOfVoteDifferences voteDifference', voteDifference);
-                        //$seatsOfListWithTooFewSeatsFirst = $seatsOfListWithTooFewSeats[$this->area[$i]]['first'];
-                        //$seatsOfListWithTooFewSeatsCorrected = $seatsOfListWithTooFewSeats[$this->area[$i]]['corrected'];
-                        seatsOfListWithTooFewSeatsCorrected = voteDifference.listTooFew.seats[areas[a]].corrected;
-                    }
-                    //if($seatsOfListWithTooFewSeatsCorrected > $seatsOfListWithTooFewSeatsFirst){
-                    if (seatsOfListWithTooFewSeatsCorrected === 1) {
-                        voteDifference.filterStatus = 6;
-                        // [ The list with partiesWithTooFewSeats already got a seat in this supervisory board through the vote-difference-procedure. ]
-                        // (6) The LIST with parties with too FEW seats already got a seat in this supervisory board through the vote-difference-procedure.
-                        continue;
-                    }
-
-                    voteDifference.filterStatus = 1;
-                    rl.filteredListOfVoteDifferences[areas[a]].push(voteDifference);
-
-                    seatsToCorrect[areas[a]] -= 1;
-                    voteDifference.listTooMuch.seats[areas[a]].corrected -= 1; //MAYBE CHANGE: Different treatment of "corrected" in listOfCandidates and in parties.
-                    voteDifference.listTooFew.seats[areas[a]].corrected += 1;
-
-                    addChangedSeatToSB(voteDifference.listTooFew, areas[a]);
-
-                    var listPartiesForMuch = voteDifference.listTooMuch.parties;
-                    if (listPartiesForMuch.length === 1) {
-                        extendedData.parties[iPa[listPartiesForMuch[0].id]].seats[rl.id][areas[a]].differenceCounter += 1;
-                    } else {
-                        changeDifferenceCounterOfListParties(voteDifference.listTooMuch, areas[a], 1);
-                    }
-
-                    var listPartiesForFew = voteDifference.listTooFew.parties;
-                    if (listPartiesForFew.length === 1) {
-                        extendedData.parties[iPa[listPartiesForFew[0].id]].seats[rl.id][areas[a]].differenceCounter -= 1;
-                    } else {
-                        changeDifferenceCounterOfListParties(voteDifference.listTooFew, areas[a], -1);
-                    }
-                    //$this->listOfVoteDifferences[$this->area[$i]][$j]['tooMuchSeats']['listOfCandidates']->setSeats(-1, $this->area[$i], 'corrected');
-                    //$this->listOfVoteDifferences[$this->area[$i]][$j]['tooFewSeats']['listOfCandidates']->setSeats(1, $this->area[$i], 'corrected');
-                    //$this->listOfVoteDifferences[$this->area[$i]][$j]['tooMuchSeats']['party']->setSeats(1, $this->area[$i], 'differenceCounter');
-                    //$this->listOfVoteDifferences[$this->area[$i]][$j]['tooFewSeats']['party']->setSeats(-1, $this->area[$i], 'differenceCounter');
-
+            var listVD = rl.listOfVoteDifferences;
+            for (var vd = 0; vd < listVD[area].length; vd++) {
+                var voteDifference = listVD[area][vd];
+                if (seatsToCorrect[area] === 0) {
+                    listVD[area] = listVD[area].slice(0, vd);
+                    break;
                 }
+
+                //$partyWithTooFewSeats = $this->listOfVoteDifferences[$this->area[$i]][$j]['tooFewSeats']['party'];
+                //$partyWithTooMuchSeats = $this->listOfVoteDifferences[$this->area[$i]][$j]['tooMuchSeats']['party'];
+
+                //$seatsOfListWithTooMuchSeats = $this->listOfVoteDifferences[$this->area[$i]][$j]['tooMuchSeats']['listOfCandidates']->getSeats();
+                //if($seatsOfListWithTooMuchSeats[$this->area[$i]]['corrected'] < 1){
+                if (voteDifference.listTooMuch.seats[area].first === 0) {
+                    //$this->listOfVoteDifferences[$this->area[$i]][$j]['filterStatus'] = 2;
+                    voteDifference.filterStatus = 2;
+                    // [[If list with partiesWithTooMuchSeats has NOT at least 1 seat in this SB FOR THIS AREA.]]
+                    // (2) The LIST of the party with too MUCH seats has NOT at least 1 seat in this supervisory board for this area.
+                    continue;
+                }
+
+                if (voteDifference.listTooMuch.seats[area].corrected === 0) {
+                    //$this->listOfVoteDifferences[$this->area[$i]][$j]['filterStatus'] = 2;
+                    voteDifference.filterStatus = 3;
+                    // [[If list with partiesWithTooMuchSeats has NOT at least 1 seat in this SB FOR THIS AREA.]]
+                    // (3) The LIST of the party with too MUCH seats has NOT ANY MORE at least 1 seat in this supervisory board for this area.
+                    continue;
+                }
+
+                //$seatsOfPartyWithTooFewSeats = $partyWithTooFewSeats->getSeats();
+                //if($seatsOfPartyWithTooFewSeats[$this->area[$i]]['differenceCounter'] < 1){
+                var tooFewSeats = getSumOfSeatsDifferencesOfParties(voteDifference.listTooFew.parties, area, rl.id);
+                if (tooFewSeats < 1) {
+                    voteDifference.filterStatus = 4;
+                    // [ If list with partiesWithTooFewSeats has NOT too few seats now; it already got additional seats. ]
+                    // (4)The party with too FEW seats has NOT too few seats now; it already got additional seats.
+                    continue;
+                }
+
+                //$seatsOfPartyWithTooMuchSeats = $partyWithTooMuchSeats->getSeats();
+                //if($seatsOfPartyWithTooMuchSeats[$this->area[$i]]['differenceCounter'] > -1){
+                var tooMuchSeats = getSumOfSeatsDifferencesOfParties(voteDifference.listTooMuch.parties, area, rl.id);
+                if (tooMuchSeats > -1) {
+                    voteDifference.filterStatus = 5;
+                    // [ If list with partiesWithTooMuchSeats has NOT more seats than it should have any more; it has already given the seats that where too much. ]
+                    // (5) The party with too MUCH seats has NOT more seats than it should have any more; it has already given the seats that where too much. 
+                    continue;
+                }
+
+                //$seatsOfListWithTooFewSeats = $this->listOfVoteDifferences[$this->area[$i]][$j]['tooFewSeats']['listOfCandidates']->getSeats();
+
+                //var seatsOfListWithTooFewSeatsFirst;
+                var seatsOfListWithTooFewSeatsCorrected;
+                if (area === 'international') {
+                    //$seatsOfListWithTooFewSeatsFirst = $seatsOfListWithTooFewSeats['regional']['first'] + $seatsOfListWithTooFewSeats['international']['first'];
+                    //$seatsOfListWithTooFewSeatsCorrected = $seatsOfListWithTooFewSeats['regional']['corrected'] + $seatsOfListWithTooFewSeats['international']['corrected'];
+                    seatsOfListWithTooFewSeatsCorrected = voteDifference.listTooFew.seats.regional.corrected + voteDifference.listTooFew.seats.international.corrected;
+                } else {
+                    //console.log('setFilteredListOfVoteDifferences voteDifference', voteDifference);
+                    //$seatsOfListWithTooFewSeatsFirst = $seatsOfListWithTooFewSeats[$this->area[$i]]['first'];
+                    //$seatsOfListWithTooFewSeatsCorrected = $seatsOfListWithTooFewSeats[$this->area[$i]]['corrected'];
+                    seatsOfListWithTooFewSeatsCorrected = voteDifference.listTooFew.seats[area].corrected;
+                }
+                //if($seatsOfListWithTooFewSeatsCorrected > $seatsOfListWithTooFewSeatsFirst){
+                if (seatsOfListWithTooFewSeatsCorrected === 1) {
+                    voteDifference.filterStatus = 6;
+                    // [ The list with partiesWithTooFewSeats already got a seat in this supervisory board through the vote-difference-procedure. ]
+                    // (6) The LIST with parties with too FEW seats already got a seat in this supervisory board through the vote-difference-procedure.
+                    continue;
+                }
+
+                voteDifference.filterStatus = 1;
+                rl.filteredListOfVoteDifferences[area].push(voteDifference);
+
+                seatsToCorrect[area] -= 1;
+                voteDifference.listTooMuch.seats[area].corrected -= 1; //MAYBE CHANGE: Different treatment of "corrected" in listOfCandidates and in parties.
+                voteDifference.listTooFew.seats[area].corrected += 1;
+
+                addChangedSeatToSB(voteDifference.listTooFew, area);
+
+                var listPartiesForMuch = voteDifference.listTooMuch.parties;
+                if (listPartiesForMuch.length === 1) {
+                    extendedData.parties[iPa[listPartiesForMuch[0].id]].seats[rl.id][area].differenceCounter += 1;
+                } else {
+                    changeDifferenceCounterOfListParties(voteDifference.listTooMuch, area, 1);
+                }
+
+                var listPartiesForFew = voteDifference.listTooFew.parties;
+                if (listPartiesForFew.length === 1) {
+                    extendedData.parties[iPa[listPartiesForFew[0].id]].seats[rl.id][area].differenceCounter -= 1;
+                } else {
+                    changeDifferenceCounterOfListParties(voteDifference.listTooFew, area, -1);
+                }
+                //$this->listOfVoteDifferences[$this->area[$i]][$j]['tooMuchSeats']['listOfCandidates']->setSeats(-1, $this->area[$i], 'corrected');
+                //$this->listOfVoteDifferences[$this->area[$i]][$j]['tooFewSeats']['listOfCandidates']->setSeats(1, $this->area[$i], 'corrected');
+                //$this->listOfVoteDifferences[$this->area[$i]][$j]['tooMuchSeats']['party']->setSeats(1, $this->area[$i], 'differenceCounter');
+                //$this->listOfVoteDifferences[$this->area[$i]][$j]['tooFewSeats']['party']->setSeats(-1, $this->area[$i], 'differenceCounter');
+
             }
         }
     }
@@ -777,17 +775,14 @@ define(['seatsDistribution'], function (seatsDistribution) {
      * @returns {undefined}
      */
     function addVoteDifferencesToSBs() {
-        var rli = extendedData.current_ranking_list;
-        for (var a = 0; a < areas.length; a++) {
-            var rls = [];
-            areas[a] == 'international' ? rls.push(rli) : rls = rli.regional_lists;
-            for (var r = 0; r < rls.length; r++) {
-                var rl = rls[r];
-                for (var vd = 0; vd < rl.filteredListOfVoteDifferences[areas[a]].length; vd++) {
-                    var voteDifference = rl.filteredListOfVoteDifferences[areas[a]][vd];
-                    var sb = extendedData.supervisory_boards[iSB[voteDifference.supervisoryBoard.id]];
-                    sb.voteDifferences[areas[a]].push(voteDifference);
-                }
+        var rls = extendedData.ranking_lists;
+        for (var r = 0; r < rls.length; r++) {
+            var rl = rls[r];
+            var area = internationalOrRegional(rls[r].region);
+            for (var vd = 0; vd < rl.filteredListOfVoteDifferences[area].length; vd++) {
+                var voteDifference = rl.filteredListOfVoteDifferences[area][vd];
+                var sb = extendedData.supervisory_boards[iSB[voteDifference.supervisoryBoard.id]];
+                sb.voteDifferences[area].push(voteDifference);
             }
         }
     }
