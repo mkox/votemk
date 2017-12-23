@@ -3,7 +3,8 @@
 import Vue from 'vue'
 //import Vuex from 'vuex'
 import VueRouter from 'vue-router';
-import Vote from './Vote'
+//import Vote from './Vote'
+import VoteOverview from './VoteOverview'
 
 //import axios from 'axios';  // ONLY NEEDED FOR TESTING
 import store from './vuex/store'
@@ -53,7 +54,9 @@ const router = new VueRouter({
 new Vue({
   router,
   el: '#vote',
-  template: '<Vote/>',
+  //template: '<Vote/>',
+  template: '<VoteOverview/>',
   //store,
-  components: { Vote }
+  //components: { Vote }
+  components: { VoteOverview }
 })

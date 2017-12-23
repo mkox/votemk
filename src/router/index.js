@@ -8,6 +8,7 @@ Vue.use(Router)
 //const Home = () => import('../views/HomeForSingleSB.vue')
 import Home from '../views/HomeForSingleSB.vue';
 import SbDetail from '../views/DetailsForSingleSB.vue';
+import Vote from '../Vote.vue';
 
 export function createRouter () {
   return new Router({
@@ -25,8 +26,12 @@ export function createRouter () {
       { path: '/user/:id', component: UserView },
       { path: '/', redirect: '/top' }
       */
-      { path: '/', component: Home },
-      { path: '/sb_detail/:sb_index', component: SbDetail, name: 'sbDetail'}
+      //{ path: '/', component: Home },
+      { path: '/', components: {sb_details:Home} },
+      //{ path: '/sb_detail/:sb_index', component: SbDetail, name: 'sbDetail'},
+      { path: '/sb_detail/:sb_index', components: {sb_details: SbDetail}, name: 'sbDetail'},
+      //{ path: '/ranking_list/:rl_id/sb_detail/:sb_index', components: {sb_details: SbDetail}, name: 'sbDetail'},
+      { path: '/ranking_list/:rl_id', components: {ranking_list: Vote}, name: 'rankingList'}
     ]
   })
 }

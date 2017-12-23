@@ -16,7 +16,7 @@ export default {
       //thisBeforeMount.gridData = sbs;
       console.log('extendedData: ', extendedData);
       //store.commit('extendedData', extendedData)
-      commit(SET_EXTENDED_DATA, extendedData)
+      commit(SET_EXTENDED_DATA, extendedData);
         //console.log('BEFORE this.$store.commit in setExtendedData() ');
       //this.$store.commit('extendedData', extendedData);
         console.log('BEFORE sbs in setExtendedData() ');

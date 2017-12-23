@@ -1,23 +1,24 @@
 <template>
-	<div id='vote'>
-    <form id="search">
-      Search <input name="query" v-model="searchQuery">
-    </form>
-    <div id='sbs'>
+	<div id='voteOverview'>
+    <div id='rlInt'>
       <div class='overview'>
-        <votegrid
-        :data="gridData"
-        :columns="gridColumns"
-        :filter-key="searchQuery">
-        </votegrid>
+        <ListOfRankingListsInternational
+        :data="rankingLists">
+        </ListOfRankingListsInternational>
       </div>
 	  </div>
+    <div class='rankinglist-selected'>
+      <router-view name="ranking_list"></router-view>
+    </div>
+    <div class='details'>
+      <router-view name="sb_details"></router-view>
+    </div>
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
-  import Votegrid from './components/Votegrid';
+  import ListOfRankingListsInternational from './components/ListOfRankingListsInternational';
   //console.log('Votegrid:', Votegrid);
   import store from './vuex/store'
   //import axios from 'axios';
@@ -27,70 +28,38 @@
   //var rankingList = require('rankingList');
 
   export default {
-    name: 'vote',
-    template: '#vote',
+    name: 'voteOverview',
+    template: '#voteOverview',
     data: () => ({
-      searchQuery: '',
-      gridColumns: ['name', 'vue_seats', 'vue_seats_area', 'vue_seats_changed', 'vue_votes'],
-      gridData: [],
-      rankingListId: -1
+      //searchQuery: '',
+      //gridColumns: ['name', 'vue_seats', 'vue_seats_area', 'vue_seats_changed', 'vue_votes'],
+      //gridData: []
+      rankingLists: [],
+      supervisoryBoards: []
     }),
-    beforeRouteEnter (to, from, next) {
-      console.log('Vote.vue beforeRouteEnter to', to);
-      console.log('Vote.vue beforeRouteEnter this', this);
-      next(vm => {
-        vm.rankingListId = to.params.rl_id
-      });
-    },
-    beforeRouteUpdate (to, from, next) {
-      console.log('Vote.vue beforeRouteUpdate to', to);
-      this.sbIndex = to.params.rl_id
-    },  
-    watch: {
-      rankingListId: function (val, oldVal) {
-        console.log('Vote.vue watch rankingListId');
-        //console.log('new: %s, old: %s', val, oldVal)
-      }
-    },
     beforeMount() {
-      console.log('Vote.vue beforeMount');
-      var thisBeforeMount = this;
-      
-      store.commit('SET_CURRENT_RANKING_LIST', thisBeforeMount.rankingListId)
 
-      //store.dispatch('setExtendedData').then(DelayPromise(1000)).then(() => {  // TODO: LATER OTHER SOLUTION than DelayPromise()
+      var thisBeforeMount = this;
+
+      store.dispatch('setExtendedData').then(DelayPromise(1000)).then(() => {  // TODO: LATER OTHER SOLUTION than DelayPromise()
+        
+        var eData = thisBeforeMount.$store.getters.getExtendedData;
+        thisBeforeMount.rankingLists = eData.ranking_lists;
+        thisBeforeMount.supervisoryBoards = eData.supervisory_boards;
+        
+        /*
         //thisBeforeMount.gridData = this.$store.getters.getSupervisoryBoards;
         console.log('in beforeMount, x100 ');
         thisBeforeMount.gridData = thisBeforeMount.$store.getters.getSupervisoryBoards;
         console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
-      //});
+        */
+      });
 
       console.log('"this" in beforeMount: ', this);
       //console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
     },
-    mounted() {
-      console.log('Vote.vue mounted');
-    },
-    errorCaptured() {
-      console.log('Vote.vue errorCaptured');
-    },
-    activated() {
-      console.log('Vote.vue activated');
-    },
-    beforeCreate() {
-      console.log('Vote.vue beforeCreate');
-    },
-    created() {
-      console.log('Vote.vue created');
-    },
-    beforeUpdate() {
-      console.log('Vote.vue beforeUpdate');
-    },
-    updated() {
-      console.log('Vote.vue updated');
-    },
     components: {
-      'votegrid': Votegrid
+      'ListOfRankingListsInternational': ListOfRankingListsInternational
     },
     store
   };

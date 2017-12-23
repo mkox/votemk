@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import getters from './getters'
 import actions from './actions'
-import { SET_EXTENDED_DATA, CHANGE_MSG, INCREMENT_COUNTER } from './mutation_types'
+import { SET_EXTENDED_DATA, CHANGE_MSG, INCREMENT_COUNTER, SET_CURRENT_RANKING_LIST } from './mutation_types'
 import axios from 'axios';
 var rankingList = require('rankingList');
 
@@ -30,6 +30,15 @@ const mutations = {
   },
   [INCREMENT_COUNTER](state) {
     state.counter ++
+  },
+  [SET_CURRENT_RANKING_LIST](state, rlId) {
+    console.log('store.js SET_CURRENT_RANKING_LIST, rlId', rlId);
+    var rls = state.extendedData.ranking_lists;
+    for(var rl = 0; rl < rls.length; rl++) {
+      if(rls[rl] == rlId) {
+        state.extendedData.current_ranking_list = rls[rl];
+      }
+    }
   }
 }
 

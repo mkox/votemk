@@ -9,6 +9,9 @@ export default {
   },
   getCounter(state) {
     return (state.counter)
+  },
+  getExtendedData(state) {
+    return state.extendedData;
   }
 }
 

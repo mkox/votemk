@@ -840,10 +840,10 @@ define(['seatsDistribution'], function (seatsDistribution) {
             addVoteDifferencesToSBs();
 
             additionals();
-        },
-        setCurrentRankingList: function (rl_id) {
-            extendedData.current_ranking_list = extendedData.ranking_lists[iRL[rl_id]];
-        }
+        }//,
+//        setCurrentRankingList: function (rl_id) {
+//            extendedData.current_ranking_list = extendedData.ranking_lists[iRL[rl_id]];
+//        }
 
     };
 
