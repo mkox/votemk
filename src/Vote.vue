@@ -8,7 +8,8 @@
         <votegrid
         :data="gridData"
         :columns="gridColumns"
-        :filter-key="searchQuery">
+        :filter-key="searchQuery"
+				:rankingListId="rankingListId">
         </votegrid>
       </div>
 	  </div>

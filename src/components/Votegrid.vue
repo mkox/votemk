@@ -15,7 +15,7 @@
       <tr v-for="(entry, entryIndex) in filteredData">
         <td v-for="key in columns">
           {{entry[key]}}<br>
-          <router-link :to="{ name: 'sbDetail', params: { sb_index: entryIndex }}">sb detail</router-link>
+          <router-link :to="{ name: 'rankingListAndDetails', params: {rl_id: rankingListId, sb_index: entryIndex }}">sb detail</router-link>
         </td>
       </tr>
     </tbody>
@@ -29,7 +29,8 @@ export default {
   props: {
     data: Array,
     columns: Array,
-    filterKey: String
+    filterKey: String,
+		rankingListId: Number
   },
   data: function () {
     var sortOrders = {}
@@ -49,6 +50,7 @@ export default {
       var filterKey = this.filterKey && this.filterKey.toLowerCase()
       var order = this.sortOrders[sortKey] || 1
       var data = this.data
+			console.log('data in Votegrid.vue: ', data);
       if (filterKey) {
         data = data.filter(function (row) {
           return Object.keys(row).some(function (key) {
