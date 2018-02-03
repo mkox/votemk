@@ -45,7 +45,12 @@
     },
     beforeRouteUpdate (to, from, next) {
       console.log('Vote.vue beforeRouteUpdate to', to);
-      this.sbIndex = to.params.rl_id
+      //this.sbIndex = to.params.rl_id
+			/*this.rankingListId = to.params.rl_id
+			this.sbIndex = to.params.sb_index*/
+			next(vm => {
+        vm.rankingListId = to.params.rl_id
+      });
     },  
     watch: {
       rankingListId: function (val, oldVal) {
