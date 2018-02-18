@@ -35,8 +35,12 @@ const mutations = {
     console.log('store.js SET_CURRENT_RANKING_LIST, rlId', rlId);
     var rls = state.extendedData.ranking_lists;
     for(var rl = 0; rl < rls.length; rl++) {
-      if(rls[rl] == rlId) {
+			console.log('store.js rls[rl].id - rlId', rls[rl].id + ' - ' + rlId);
+      if(rls[rl].id == rlId) {
+				console.log('changed current_ranking_list', rlId);
         state.extendedData.current_ranking_list = rls[rl];
+				console.log('store.js SET_CURRENT_RANKING_LIST, state.extendedData.current_ranking_list', state.extendedData.current_ranking_list);
+				break;
       }
     }
   }
