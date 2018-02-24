@@ -40,21 +40,24 @@
       console.log('Vote.vue beforeRouteEnter to', to);
       console.log('Vote.vue beforeRouteEnter this', this);
 			console.log('Vote.vue beforeRouteEnter rankingListId to.params.rl_id', to.params.rl_id);
-      next(vm => {
-        vm.rankingListId = to.params.rl_id
-      });
-			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id)
+			
+			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
+			next(vm => {
+				vm.rankingListId = to.params.rl_id,
+				vm.gridData = store.getters.getSupervisoryBoards;
+			});
     },
     beforeRouteUpdate (to, from, next) {
       console.log('Vote.vue beforeRouteUpdate to', to);
-      //this.sbIndex = to.params.rl_id
-			/*this.rankingListId = to.params.rl_id
-			this.sbIndex = to.params.sb_index*/
 			console.log('Vote.vue beforeRouteUpdate rankingListId to.params.rl_id', to.params.rl_id);
+			
+			//if(this.rankingListId != to.params.rl_id) {
+			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
 			next(vm => {
-        vm.rankingListId = to.params.rl_id
-      });
-			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id)
+				vm.rankingListId = to.params.rl_id,
+				vm.gridData = store.getters.getSupervisoryBoards;
+			});
+			//}
     },  
     watch: {
       rankingListId: function (val, oldVal) {
@@ -72,7 +75,7 @@
       //store.dispatch('setExtendedData').then(DelayPromise(1000)).then(() => {  // TODO: LATER OTHER SOLUTION than DelayPromise()
         //thisBeforeMount.gridData = this.$store.getters.getSupervisoryBoards;
         console.log('in beforeMount, x100 ');
-        thisBeforeMount.gridData = thisBeforeMount.$store.getters.getSupervisoryBoards;
+        //thisBeforeMount.gridData = thisBeforeMount.$store.getters.getSupervisoryBoards;
         console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
       //});
 

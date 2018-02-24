@@ -8,7 +8,7 @@
     <tbody>
       <tr v-for="(entry, entryIndex) in data">
         <td>
-          <router-link :to="{ name: 'rankingList', params: { rl_id: entry.id, sb_index: entryIndex }}">{{entry.name}}</router-link>
+          <router-link :to="{ name: 'rankingList', params: { rl_id: entry.id, sb_index: 0}}">{{entry.name}}</router-link>
         </td>
       </tr>
     </tbody>

@@ -35,8 +35,8 @@ export function createRouter () {
       //{ path: '/ranking_list/:rl_id/sb_detail/:sb_index', components: {sb_details: SbDetail}, name: 'sbDetail'},
       { path: '/ranking_list/:rl_id', components: {ranking_list: Vote}, name: 'rankingList'}
 			*/
-			{ path: '/ranking_list/:rl_id', components: {ranking_list: Vote, sb_details: SbDetail}, name: 'rankingList'},
+			{ path: '/ranking_list/:rl_id/sb_detail/0', components: {ranking_list: Vote, sb_details: SbDetail}, name: 'rankingList'},
 			{ path: '/ranking_list/:rl_id/sb_detail/:sb_index', components: {ranking_list: Vote, sb_details: SbDetail}, name: 'rankingListAndDetails'}
     ]
-  })
+  });
 }

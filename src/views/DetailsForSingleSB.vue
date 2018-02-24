@@ -65,13 +65,26 @@
     beforeRouteEnter (to, from, next) {
       console.log('details-for-single-sb beforeRouteEnter to', to);
       next(vm => {
-        vm.sbIndex = to.params.sb_index
+        vm.sbIndex = to.params.sb_index,
+				vm.sbs = store.getters.getSupervisoryBoards;
       });
     },
-    beforeRouteUpdate (to, from, next) {
+    /*beforeRouteUpdate (to, from, next) {
       console.log('details-for-single-sb beforeRouteUpdate to', to);
-      this.sbIndex = to.params.sb_index
-    },
+      //this.sbIndex = to.params.sb_index
+      next(vm => {
+        vm.sbIndex = to.params.sb_index,
+				vm.sbs = store.getters.getSupervisoryBoards;
+      });
+    },*/
+		watch: {
+			'$route' (to, from) {
+				// react to route changes...
+				console.log('details-for-single-sb watch to', to);
+				this.sbIndex = to.params.sb_index;
+				this.sbs = store.getters.getSupervisoryBoards;
+			}
+		},
     computed: {
       sbLists: function () {
         //console.log('details-for-single-sb sbLists this', this);
