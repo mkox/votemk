@@ -1,24 +1,33 @@
 <template>
 	<div id='voteOverview'>
-    <div id='rlInt'>
-      <div class='overview'>
-        <ListOfRankingListsInternational
-        :data="rankingLists">
-        </ListOfRankingListsInternational>
-      </div>
-	  </div>
-    <div class='rankinglist-selected'>
-      <router-view name="ranking_list"></router-view>
-    </div>
-    <div class='details'>
-      <router-view name="sb_details"></router-view>
-    </div>
+		<div id='leftBar'>
+			<div id='rlInt'>
+				<div class='overview'>
+					<ListOfRankingLists
+					:data="rankingListsInternational">
+					</ListOfRankingLists>
+				</div>
+			</div>
+			<div id='rlRegional'>
+				<div class='overview'>
+					<ListOfRankingLists
+					:data="rankingListsRegional">
+					</ListOfRankingLists>
+				</div>
+			</div>
+		</div>
+		<div class='rankinglist-selected'>
+			<router-view name="ranking_list"></router-view>
+		</div>
+		<div class='details'>
+			<router-view name="sb_details"></router-view>
+		</div>
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
-  import ListOfRankingListsInternational from './components/ListOfRankingListsInternational';
+  import ListOfRankingLists from './components/ListOfRankingLists';
   //console.log('Votegrid:', Votegrid);
   import store from './vuex/store'
   //import axios from 'axios';
@@ -34,7 +43,8 @@
       //searchQuery: '',
       //gridColumns: ['name', 'vue_seats', 'vue_seats_area', 'vue_seats_changed', 'vue_votes'],
       //gridData: []
-      rankingLists: [],
+      rankingListsInternational: [],
+      rankingListsRegional: [],
       supervisoryBoards: []
     }),
     beforeMount() {
@@ -44,7 +54,19 @@
       store.dispatch('setExtendedData').then(DelayPromise(1000)).then(() => {  // TODO: LATER OTHER SOLUTION than DelayPromise()
         
         var eData = thisBeforeMount.$store.getters.getExtendedData;
-        thisBeforeMount.rankingLists = eData.ranking_lists;
+        //thisBeforeMount.rankingLists = eData.ranking_lists;
+				var rl = eData.ranking_lists;
+				var rlIntReg = {international: [], regional: []};
+				for (var r = 0; r < rl.length; r++) {
+					if(rl[r].region == 'international') {
+						 rlIntReg.international.push(rl[r]);
+					 } else {
+						 rlIntReg.regional.push(rl[r]);
+					 }
+				}
+				thisBeforeMount.rankingListsInternational = rlIntReg.international;
+				thisBeforeMount.rankingListsRegional = rlIntReg.regional
+																																			
         thisBeforeMount.supervisoryBoards = eData.supervisory_boards;
         
         /*
@@ -59,7 +81,7 @@
       //console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
     },
     components: {
-      'ListOfRankingListsInternational': ListOfRankingListsInternational
+      'ListOfRankingLists': ListOfRankingLists
     },
     store
   };
@@ -84,13 +106,18 @@
     font-size: 14px;
     color: #444;
   }
-    
-  .overview {
-      float: left
-  }
-
+	
+	#leftBar {
+		/*width: 120px;*/
+		float:left;
+	}
+	
+	#vote {
+		float: left;
+	}
+	
   .details {
-      float: left
+    float: left;
   }
 
   table {

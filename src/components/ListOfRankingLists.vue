@@ -2,7 +2,7 @@
   <table>
     <thead>
       <tr>
-        <th>Ranking lists international</th>
+        <th>Ranking lists {{ area }}</th>
       </tr>
     </thead>
     <tbody>
@@ -18,9 +18,9 @@
 <script>
 
 export default {
-  name: 'ListOfRankingListsInternational',
+  name: 'ListOfRankingLists',
   props: {
-    data: Array,
+    data: Array
     //columns: Array,
     //filterKey: String
   },
@@ -37,6 +37,13 @@ export default {
     }
   },*/
   computed: {
+		area: function () {
+			var rankingLists = this.data;
+			if(typeof rankingLists[0] != 'undefined') {
+				return (rankingLists[0].region == 'international') ? 'international' : 'regional'
+			}
+		}
+		/*
     filteredData: function () {
       var sortKey = this.sortKey
       var filterKey = this.filterKey && this.filterKey.toLowerCase()
@@ -58,17 +65,22 @@ export default {
       }
       return data
     }
+		*/
   },
   filters: {
+		/*
     capitalize: function (str) {
       return str.charAt(0).toUpperCase() + str.slice(1)
     }
+		*/
   },
   methods: {
+		/*
     sortBy: function (key) {
       this.sortKey = key
       this.sortOrders[key] = this.sortOrders[key] * -1
     }
+		*/
   }
 }
 </script>

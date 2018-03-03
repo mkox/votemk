@@ -124,6 +124,7 @@
 </script>
 
 <style>
+	/*
   body {
     font-family: Helvetica Neue, Arial, sans-serif;
     font-size: 14px;
@@ -191,4 +192,5 @@
     border-right: 4px solid transparent;
     border-top: 4px solid #fff;
   }
+	*/
 </style>
