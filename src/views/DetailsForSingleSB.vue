@@ -5,7 +5,7 @@
         <div v-if="sbIndex >= 0">Index: {{ sbIndex }}<br>Name of the sb: {{ sbs[sbIndex].name }}<br>
         </div>
         <div v-if="sbs[sbIndex]">
-          <div v-if="sbs[sbIndex].voteDifferences.international.length > 0
+          <div v-if="(sbs[sbIndex].voteDifferences.international.length > 0 && region == 'international')
                      || sbs[sbIndex].voteDifferences.regional.length > 0">
             <table>
               <thead>
@@ -17,7 +17,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(entry, entryIndex) in sbs[sbIndex].voteDifferences.international">
+                <tr v-for="(entry, entryIndex) in sbs[sbIndex].voteDifferences.international" v-if="region == 'international'">
                   <td>{{entry.listTooFew.name}}</td>
                   <td>{{entry.listTooMuch.name}}</td>
                   <td>{{Math.round(entry.difference*100)/100}} %</td>
@@ -59,14 +59,16 @@
     data () {
       return {
         sbs: store.getters.getSupervisoryBoards,
-        sbIndex: undefined 
+        sbIndex: undefined,
+				region: undefined
       }
     },
     beforeRouteEnter (to, from, next) {
       console.log('details-for-single-sb beforeRouteEnter to', to);
       next(vm => {
         vm.sbIndex = to.params.sb_index,
-				vm.sbs = store.getters.getSupervisoryBoards;
+				vm.sbs = store.getters.getSupervisoryBoards,
+				vm.region = store.getters.getRegionOfRL;
       });
     },
     /*beforeRouteUpdate (to, from, next) {
@@ -83,6 +85,7 @@
 				console.log('details-for-single-sb watch to', to);
 				this.sbIndex = to.params.sb_index;
 				this.sbs = store.getters.getSupervisoryBoards;
+				this.region = store.getters.getRegionOfRL;
 			}
 		},
     computed: {

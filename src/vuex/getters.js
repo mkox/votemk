@@ -4,6 +4,9 @@ export default {
     //return (state.msg).toUpperCase();
     return sbs;
   },
+	getRegionOfRL(state) {
+		return state.extendedData.current_ranking_list.region;
+	},
   getMessage(state) {
     return (state.msg).toUpperCase()
   },
@@ -16,12 +19,12 @@ export default {
 }
 
 function showSBBasics(state) {
-    console.log('showSBBasics x100 ');
-    console.log('state.msg: ', state.msg);
-    console.log('state.extendedData: ', state.extendedData);
-    console.log('showSBBasics x200 ');
+	console.log('showSBBasics x100 ');
+	console.log('state.msg: ', state.msg);
+	console.log('state.extendedData: ', state.extendedData);
+	console.log('showSBBasics x200 ');
     
-    var counter = 0;
+	var counter = 0;
     /*while((state.extendedData.current_ranking_list === undefined) && (counter < 10)){
     //while(state.extendedData.current_ranking_list === undefined){
         var seconds = new Date().getTime() / 1000;
@@ -40,14 +43,21 @@ function showSBBasics(state) {
 //    setTimeout(function(){ 
 //        var seconds = new Date().getTime() / 1000; console.log('showSBBasics seconds: ', seconds);
     
-        var sbs = state.extendedData.current_ranking_list.supervisory_boards;
-        console.log('showSBBasics sbs: ', sbs);
-        for(var i = 0; i < sbs.length; i++) {
-            sbs[i]["vue_seats"] = sbs[i].seats.total;
-            sbs[i]["vue_seats_area"] = sbs[i].seats.international.total;
-            sbs[i]["vue_seats_changed"] = sbs[i].seats.international.changed;
-            sbs[i]["vue_votes"] = sbs[i].votes.international;
-        }
-        return sbs;
+	var sbs = state.extendedData.current_ranking_list.supervisory_boards;
+	var region = state.extendedData.current_ranking_list.region
+	console.log('showSBBasics sbs: ', sbs);
+	for(var i = 0; i < sbs.length; i++) {
+		sbs[i]["vue_seats"] = sbs[i].seats.total;
+		if (region == 'international') {
+			sbs[i]["vue_seats_area"] = sbs[i].seats.international.total;
+			sbs[i]["vue_seats_changed"] = sbs[i].seats.international.changed + sbs[i].seats.regional.changed;
+			sbs[i]["vue_votes"] = sbs[i].votes.international;
+		} else {
+			sbs[i]["vue_seats_area"] = sbs[i].seats.regional.total;
+			sbs[i]["vue_seats_changed"] = sbs[i].seats.regional.changed;
+			sbs[i]["vue_votes"] = sbs[i].votes.regional;
+		}
+	}
+	return sbs;
 //    }, 1000);
 }
