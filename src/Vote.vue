@@ -47,7 +47,7 @@
 				vm.gridData = store.getters.getSupervisoryBoards;
 			});
     },
-    beforeRouteUpdate (to, from, next) {
+    beforeRouteUpdate (to, from, next) { // works only together with "watch"
       console.log('Vote.vue beforeRouteUpdate to', to);
 			console.log('Vote.vue beforeRouteUpdate rankingListId to.params.rl_id', to.params.rl_id);
 			
@@ -58,8 +58,14 @@
 				vm.gridData = store.getters.getSupervisoryBoards;
 			});
 			//}
-    },  
+    },
     watch: {
+			'$route' (to, from) { // works only together with "beforeRouteUpdate"
+				// react to route changes...
+				console.log('Vote.vue watch to', to);
+				this.rankingListId = to.params.rl_id,
+				this.gridData = store.getters.getSupervisoryBoards;
+			},
       rankingListId: function (val, oldVal) {
         console.log('Vote.vue watch rankingListId');
         //console.log('new: %s, old: %s', val, oldVal)
