@@ -14,8 +14,7 @@
     <tbody>
       <tr v-for="(entry, entryIndex) in filteredData">
         <td v-for="key in columns">
-          {{entry[key]}}<br>
-          <router-link :to="{ name: 'rankingListAndDetails', params: {rl_id: rankingListId, sb_index: entryIndex }}">sb detail</router-link>
+          <router-link :to="{ name: 'rankingListAndDetails', params: {rl_id: rankingListId, sb_index: entryIndex }}">{{entry[key]}}</router-link>
         </td>
       </tr>
     </tbody>
