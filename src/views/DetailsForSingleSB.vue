@@ -2,11 +2,12 @@
   <table>
     <tr>
       <td>
-        <div v-if="sbIndex >= 0">Index: {{ sbIndex }}<br>Name of the sb: {{ sbs[sbIndex].name }}<br>
+        <div>Name of the sb: {{ sb.name }}<br>
         </div>
-        <div v-if="sbs[sbIndex]">
-          <div v-if="(sbs[sbIndex].voteDifferences.international.length > 0 && region == 'international')
-                     || sbs[sbIndex].voteDifferences.regional.length > 0">
+        <div v-if="sb">
+          <div v-if="(sb.voteDifferences.international.length > 0 && region == 'international')
+                     || sb.voteDifferences.regional.length > 0">
+						<br>
             <table>
               <thead>
                 <tr>
@@ -17,13 +18,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(entry, entryIndex) in sbs[sbIndex].voteDifferences.international" v-if="region == 'international'">
+                <tr v-for="(entry, entryIndex) in sb.voteDifferences.international" v-if="region == 'international'">
                   <td>{{entry.listTooFew.name}}</td>
                   <td>{{entry.listTooMuch.name}}</td>
                   <td>{{Math.round(entry.difference*100)/100}} %</td>
                   <td>international</td>
                 </tr>
-                <tr v-for="(entry, entryIndex) in sbs[sbIndex].voteDifferences.regional">
+                <tr v-for="(entry, entryIndex) in sb.voteDifferences.regional">
                   <td>{{entry.listTooFew.name}}</td>
                   <td>{{entry.listTooMuch.name}}</td>
                   <td>{{Math.round(entry.difference*100)/100}} %</td>
@@ -58,16 +59,14 @@
     name: 'details-for-single-sb',
     data () {
       return {
-        sbs: store.getters.getSupervisoryBoards,
-        sbIndex: undefined,
+        sb: store.getters.getSupervisoryBoardById,
 				region: undefined
       }
     },
     beforeRouteEnter (to, from, next) {
       console.log('details-for-single-sb beforeRouteEnter to', to);
       next(vm => {
-        vm.sbIndex = to.params.sb_index,
-				vm.sbs = store.getters.getSupervisoryBoards,
+				vm.sb = store.getters.getSupervisoryBoardById,
 				vm.region = store.getters.getRegionOfRL;
       });
     },
@@ -83,24 +82,25 @@
 			'$route' (to, from) {
 				// react to route changes...
 				console.log('details-for-single-sb watch to', to);
-				this.sbIndex = to.params.sb_index;
-				this.sbs = store.getters.getSupervisoryBoards;
+				this.sb = store.getters.getSupervisoryBoardById;
 				this.region = store.getters.getRegionOfRL;
 			}
 		},
     computed: {
       sbLists: function () {
         //console.log('details-for-single-sb sbLists this', this);
-        if(this.sbIndex >= 0) { // without "if(this.sbIndex >= 0)" there would be an error, because after beforeRouteEnter sbLists is called twice instead of the expected once.)
-          var lists = this.sbs[this.sbIndex].lists;
+				
+        //if(this.sbIndex >= 0) { // without "if(this.sbIndex >= 0)" there would be an error, because after beforeRouteEnter sbLists is called twice instead of the expected once.)
+				//if(this.sb) {
+          var lists = this.sb.lists;
           console.log('details-for-single-sb sbLists lists', lists);
           lists.sort(function(a, b) {
             return b.votes.international - a.votes.international;
           });
           return lists;
-        } else {
+        /*} else {
           return [];
-        }
+        }*/
       }
     }
   }

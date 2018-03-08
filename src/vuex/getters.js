@@ -4,6 +4,16 @@ export default {
     //return (state.msg).toUpperCase();
     return sbs;
   },
+  getSupervisoryBoardById(state) {
+		//console.log('getters getSupervisoryBoardById state: ', state);
+		var sbs = state.extendedData.current_ranking_list.supervisory_boards;
+		for(var i = 0; i < sbs.length; i++) {
+			if(sbs[i].id == state.route.params.sb_id) {
+				 return sbs[i];
+			}
+		}
+    throw 'No SB found for the given id.';
+  },
 	getRegionOfRL(state) {
 		return state.extendedData.current_ranking_list.region;
 	},
