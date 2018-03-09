@@ -42,7 +42,14 @@
           <tr v-for="list in sbLists">
             <td>
                 Name of list/party: {{ list.name }}<br>
-                Votes international: {{ list.votes.international }}
+                Votes {{ area }}: 
+							<span v-if="area == 'international'">
+								{{ list.votes.international }}
+							</span>
+							<span v-else>
+								{{ list.votes.regional }}
+							</span>
+							
             </td>
           </tr>
         </table>
@@ -101,7 +108,10 @@
         /*} else {
           return [];
         }*/
-      }
+      },
+			area: function () {
+				return (this.region == 'international') ? 'international' : 'regional';
+			}
     }
   }
 </script>
