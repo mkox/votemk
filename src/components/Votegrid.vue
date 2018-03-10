@@ -15,6 +15,7 @@
       <tr v-for="(entry, entryIndex) in filteredData">
         <td v-for="key in columns">
           <router-link :to="{ name: 'rankingListAndDetails', params: {rl_id: rankingListId, sb_id: entry.id }}">{{entry[key]}}</router-link>
+					<router-link :to="{ name: 'rankingListAndDetails', params: {rl_id: entry.rankingLists[oppositeArea].id, sb_id: entry.id }}" v-if="key == 'name' && typeof entry.rankingLists[oppositeArea].id != 'undefined'" class="oppositeAreaLink">({{oppositeAreaAbbr}})</router-link>
         </td>
       </tr>
     </tbody>
@@ -65,7 +66,13 @@ export default {
         })
       }
       return data
-    }
+    },
+		oppositeArea: function () {
+			return (this.rankingListId == this.data[0].rankingLists.international.id) ? 'regional' : 'international';
+		},
+		oppositeAreaAbbr: function () {
+			return (this.rankingListId == this.data[0].rankingLists.international.id) ? 'reg' : 'int';
+		}
   },
   filters: {
     capitalize: function (str) {
@@ -83,6 +90,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+	.oppositeAreaLink {
+		float: right;
+	}
     /*
 h1, h2 {
   font-weight: normal;
