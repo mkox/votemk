@@ -58,6 +58,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
         addVotesForParties();
         addVotesByArea();
         addSeatsByArea();
+        addRankingListsToSBs();
     }
 
     function initData() {
@@ -194,6 +195,10 @@ define(['seatsDistribution'], function (seatsDistribution) {
                 changed: 0
             };
             sb.region = '';
+            sb.rankingLists = {
+                regional: {},
+                international: {}
+            };
         }
     }
 
@@ -432,6 +437,20 @@ define(['seatsDistribution'], function (seatsDistribution) {
             for (var s = 0; s < rls[r].supervisory_boards.length; s++) {
                 rls[r].allConnectedSB.international.seats += getInternationalSeats(sbs[s].seats.total);
                 rls[r].allConnectedSB.regional.seats += getRegionalSeats(sbs[s].seats.total);
+            }
+        }
+    }
+    
+    function addRankingListsToSBs() {
+        var rls = extendedData.ranking_lists;
+        for (var r = 0; r < rls.length; r++) {
+            for (var s = 0; s < rls[r].supervisory_boards.length; s++) {
+                var sb = rls[r].supervisory_boards[s];
+                if(rls[r].region === 'international') {
+                    sb.rankingLists.international = rls[r];
+                } else {
+                    sb.rankingLists.regional = rls[r];
+                }
             }
         }
     }
