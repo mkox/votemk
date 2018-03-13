@@ -60,14 +60,26 @@ function showSBBasics(state) {
 		sbs[i]["vue_seats"] = sbs[i].seats.total;
 		if (region == 'international') {
 			sbs[i]["vue_seats_area"] = sbs[i].seats.international.total;
-			sbs[i]["vue_seats_changed"] = sbs[i].seats.international.changed + sbs[i].seats.regional.changed;
+			sbs[i]["vue_seats_changed"] = showSeatsChanged(sbs[i].seats.regional.changed, sbs[i].seats.international.changed, 'international');
 			sbs[i]["vue_votes"] = sbs[i].votes.international;
 		} else {
 			sbs[i]["vue_seats_area"] = sbs[i].seats.regional.total;
-			sbs[i]["vue_seats_changed"] = sbs[i].seats.regional.changed;
+			sbs[i]["vue_seats_changed"] =  showSeatsChanged(sbs[i].seats.regional.changed, sbs[i].seats.international.changed, 'regional');
 			sbs[i]["vue_votes"] = sbs[i].votes.regional;
 		}
 	}
 	return sbs;
 //    }, 1000);
+}
+
+function showSeatsChanged(regional, international, area) {
+	var total = regional + international;
+	var areaVotes = (area == 'regional') ? regional : international;
+	var output = '';
+	if(total == areaVotes){
+		output = total;
+	} else {
+		output = areaVotes + ' of ' + total;
+	}
+	return output;
 }
