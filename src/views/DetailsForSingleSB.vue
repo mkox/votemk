@@ -5,8 +5,7 @@
         <div>Name of the sb: {{ sb.name }}<br>
         </div>
         <div v-if="sb">
-          <div v-if="(sb.voteDifferences.international.length > 0 && region == 'international')
-                     || sb.voteDifferences.regional.length > 0">
+          <div v-if="sb.voteDifferences.international.length > 0 || sb.voteDifferences.regional.length > 0">
 						<br>
             <table>
               <thead>
@@ -18,7 +17,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(entry, entryIndex) in sb.voteDifferences.international" v-if="region == 'international'">
+                <tr v-for="(entry, entryIndex) in sb.voteDifferences.international">
                   <td>{{entry.listTooFew.name}}</td>
                   <td>{{entry.listTooMuch.name}}</td>
                   <td>{{Math.round(entry.difference*100)/100}} %</td>
@@ -41,12 +40,13 @@
         <table>
           <tr v-for="list in sbLists">
             <td>
-                Name of list/party: {{ list.name }}<br>
-                Votes {{ area }}: 
-							<span v-if="area == 'international'">
+                Name of list/party: {{ list.name }}
+								<span v-if="typeof sb.rankingLists.international.id != 'undefined'"><br>
+                Votes international: 
 								{{ list.votes.international }}
-							</span>
-							<span v-else>
+							</span><br>
+							<span>
+								Votes regional: 
 								{{ list.votes.regional }}
 							</span>
 							
