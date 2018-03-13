@@ -32,7 +32,7 @@
     template: '#vote',
     data: () => ({
       searchQuery: '',
-      gridColumns: ['name', 'vue_seats', 'vue_seats_area', 'vue_seats_changed', 'vue_votes'],
+      gridColumns: ['name', 'vue_seats', 'vue_seats_changed', 'vue_votes'],
       gridData: [],
       rankingListId: -1
     }),

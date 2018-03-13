@@ -57,13 +57,12 @@ function showSBBasics(state) {
 	var region = state.extendedData.current_ranking_list.region
 	console.log('showSBBasics sbs: ', sbs);
 	for(var i = 0; i < sbs.length; i++) {
-		sbs[i]["vue_seats"] = sbs[i].seats.total;
 		if (region == 'international') {
-			sbs[i]["vue_seats_area"] = sbs[i].seats.international.total;
+			sbs[i]["vue_seats"] = sbs[i].seats.international.total + ' of ' + sbs[i].seats.total;
 			sbs[i]["vue_seats_changed"] = showSeatsChanged(sbs[i].seats.regional.changed, sbs[i].seats.international.changed, 'international');
 			sbs[i]["vue_votes"] = sbs[i].votes.international;
 		} else {
-			sbs[i]["vue_seats_area"] = sbs[i].seats.regional.total;
+			sbs[i]["vue_seats"] = sbs[i].seats.regional.total + ' of ' + sbs[i].seats.total;
 			sbs[i]["vue_seats_changed"] =  showSeatsChanged(sbs[i].seats.regional.changed, sbs[i].seats.international.changed, 'regional');
 			sbs[i]["vue_votes"] = sbs[i].votes.regional;
 		}
