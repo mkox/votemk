@@ -1,5 +1,6 @@
 <template>
 	<div id='vote'>
+		<div id="rlHeadInfo">{{ rankingList.area }} - {{ rankingList.name }}</div>
     <form id="search">
       Search <input name="query" v-model="searchQuery">
     </form>
@@ -34,7 +35,8 @@
       searchQuery: '',
       gridColumns: ['name', 'vue_seats', 'vue_seats_changed', 'vue_votes'],
       gridData: [],
-      rankingListId: -1
+      rankingListId: -1,
+			rankingList: {}
     }),
     beforeRouteEnter (to, from, next) {
       console.log('Vote.vue beforeRouteEnter to', to);
@@ -44,7 +46,8 @@
 			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
 			next(vm => {
 				vm.rankingListId = to.params.rl_id,
-				vm.gridData = store.getters.getSupervisoryBoards;
+				vm.gridData = store.getters.getSupervisoryBoards,
+				vm.rankingList = store.getters.getCurrentRankingList;
 			});
     },
     beforeRouteUpdate (to, from, next) { // works only together with "watch"
@@ -55,7 +58,8 @@
 			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
 			next(vm => {
 				vm.rankingListId = to.params.rl_id,
-				vm.gridData = store.getters.getSupervisoryBoards;
+				vm.gridData = store.getters.getSupervisoryBoards,
+				vm.rankingList = store.getters.getCurrentRankingList;
 			});
 			//}
     },
@@ -65,6 +69,7 @@
 				console.log('Vote.vue watch to', to);
 				this.rankingListId = to.params.rl_id,
 				this.gridData = store.getters.getSupervisoryBoards;
+				this.rankingList = store.getters.getCurrentRankingList;
 			},
       rankingListId: function (val, oldVal) {
         console.log('Vote.vue watch rankingListId');
@@ -130,6 +135,13 @@
 </script>
 
 <style>
+	#rlHeadInfo {
+		float: left;
+		font-weight: bold;
+	}
+	#search {
+		float: right;
+	}
 	/*
   body {
     font-family: Helvetica Neue, Arial, sans-serif;

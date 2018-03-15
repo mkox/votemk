@@ -73,6 +73,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
         rlsInitListsOfVoteDifferences();
         rlsInitParties();
         rlsInitRankingListsInternational();
+        rlsAddArea();
     }
 
     function rlsSetSBs() {
@@ -135,6 +136,17 @@ define(['seatsDistribution'], function (seatsDistribution) {
                     extendedData.current_ranking_list = rls[r];
                 }
                 addRegionalToInternationalList(rls[r]);
+            }
+        }
+    }
+
+    function rlsAddArea() {
+        var rls = extendedData.ranking_lists;
+        for (var r = 0; r < rls.length; r++) {
+            if (rls[r].region === 'international') {
+                rls[r].area = 'international';
+            } else {
+                rls[r].area = 'regional';
             }
         }
     }

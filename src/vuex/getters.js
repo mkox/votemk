@@ -14,6 +14,9 @@ export default {
 		}
     throw 'No SB found for the given id.';
   },
+	getCurrentRankingList(state) {
+		return state.extendedData.current_ranking_list;
+	},
 	getRegionOfRL(state) {
 		return state.extendedData.current_ranking_list.region;
 	},
