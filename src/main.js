@@ -53,10 +53,11 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 const vote = new Vue({
   router,
-  //el: '#vote',
+  el: '#voteOverview',
   //template: '<Vote/>',
   template: '<VoteOverview/>',
   //store,
   //components: { Vote }
   components: { VoteOverview }
-}).$mount('#vote')
+})
+//.$mount('#vote')
