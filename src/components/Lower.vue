@@ -1,32 +1,22 @@
 <template>
-	<div id='vote'>
-		<div id="rlHeadInfo">{{ rankingList.area }} - {{ rankingList.name }}</div>
-    <form id="search">
-      Search <input name="query" v-model="searchQuery">
-    </form>
-    <div id='sbs'>
-      <div class='overview'>
-        <votegrid
-        :data="gridData"
-        :columns="gridColumns"
-        :filter-key="searchQuery"
-				:rankingListId="rankingListId">
-        </votegrid>
-      </div>
-	  </div>
+	<div id='lower'>
+		<div id='filteredListOfVoteDifferences'>
+			<VoteDifferences
+			:voteDifferences="rankingList.filteredListOfVoteDifferences" :listType="filteredListOfVoteDifferences">
+			</voteDifferences>
+		</div>
+		<div id='istOfVoteDifferences'>
+			<VoteDifferences
+			:voteDifferences="rankingList.listOfVoteDifferences" :listType="listOfVoteDifferences">
+			</voteDifferences>
+		</div>
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
-  import Votegrid from './components/Votegrid';
-  //console.log('Votegrid:', Votegrid);
-  import store from './vuex/store'
-  //import axios from 'axios';
-  //import rankingList from 'rankingList';
-
-  //var axios = require('axios');
-  //var rankingList = require('rankingList');
+  import VoteDifferences from './VoteDifferences';
+  import store from '../vuex/store'
 
   export default {
     name: 'vote',
@@ -36,17 +26,13 @@
       gridColumns: ['name', 'vue_seats', 'vue_seats_changed', 'vue_votes'],
       gridData: [],
       rankingListId: -1,
-			rankingList: {}
+			rankingList: {},
+			filteredListOfVoteDifferences: 'filtered',
+			listOfVoteDifferences: 'unfiltered'
     }),
     beforeRouteEnter (to, from, next) {
-      console.log('Vote.vue beforeRouteEnter to', to);
-      console.log('Vote.vue beforeRouteEnter this', this);
-			console.log('Vote.vue beforeRouteEnter rankingListId to.params.rl_id', to.params.rl_id);
-			
-			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
 			next(vm => {
 				vm.rankingListId = to.params.rl_id,
-				vm.gridData = store.getters.getSupervisoryBoards,
 				vm.rankingList = store.getters.getCurrentRankingList;
 			});
     },
@@ -55,10 +41,8 @@
 			console.log('Vote.vue beforeRouteUpdate rankingListId to.params.rl_id', to.params.rl_id);
 			
 			//if(this.rankingListId != to.params.rl_id) {
-			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
 			next(vm => {
 				vm.rankingListId = to.params.rl_id,
-				vm.gridData = store.getters.getSupervisoryBoards,
 				vm.rankingList = store.getters.getCurrentRankingList;
 			});
 			//}
@@ -66,15 +50,13 @@
     watch: {
 			'$route' (to, from) { // works only together with "beforeRouteUpdate"
 				// react to route changes...
+				
+				store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
+				
 				console.log('Vote.vue watch to', to);
 				this.rankingListId = to.params.rl_id,
-				this.gridData = store.getters.getSupervisoryBoards;
 				this.rankingList = store.getters.getCurrentRankingList;
-			},
-      rankingListId: function (val, oldVal) {
-        console.log('Vote.vue watch rankingListId');
-        //console.log('new: %s, old: %s', val, oldVal)
-      }
+			}
     },
     beforeMount() {
       console.log('Vote.vue beforeMount');
@@ -82,14 +64,14 @@
       
 			console.log('Vote.vue thisBeforeMount.rankingListId: ', thisBeforeMount.rankingListId);
       //store.commit('SET_CURRENT_RANKING_LIST', thisBeforeMount.rankingListId)
-
+/*
       //store.dispatch('setExtendedData').then(DelayPromise(1000)).then(() => {  // TODO: LATER OTHER SOLUTION than DelayPromise()
         //thisBeforeMount.gridData = this.$store.getters.getSupervisoryBoards;
         console.log('in beforeMount, x100 ');
         //thisBeforeMount.gridData = thisBeforeMount.$store.getters.getSupervisoryBoards;
         console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
       //});
-
+*/
       console.log('"this" in beforeMount: ', this);
       //console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
     },
@@ -115,7 +97,7 @@
       console.log('Vote.vue updated');
     },
     components: {
-      'votegrid': Votegrid
+      'VoteDifferences': VoteDifferences
     },
     store
   };
@@ -135,12 +117,8 @@
 </script>
 
 <style>
-	#rlHeadInfo {
-		float: left;
-		font-weight: bold;
-	}
-	#search {
-		float: right;
+	#lower {
+		clear: both;
 	}
 	/*
   body {

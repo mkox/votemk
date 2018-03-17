@@ -1,27 +1,26 @@
 <template>
 	<div id='voteOverview'>
-		<div id='leftBar'>
-			<div id='rlInt'>
-				<div class='overview'>
-					<ListOfRankingLists
-					:data="rankingListsInternational">
-					</ListOfRankingLists>
+		<div id="upper">
+			<div id='leftBar'>
+				<div id='rlInt'>
+					<div class='overview'>
+						<ListOfRankingLists
+						:data="rankingListsInternational">
+						</ListOfRankingLists>
+					</div>
+				</div>
+				<div id='rlRegional'>
+					<div class='overview'>
+						<ListOfRankingLists
+						:data="rankingListsRegional">
+						</ListOfRankingLists>
+					</div>
 				</div>
 			</div>
-			<div id='rlRegional'>
-				<div class='overview'>
-					<ListOfRankingLists
-					:data="rankingListsRegional">
-					</ListOfRankingLists>
-				</div>
-			</div>
-		</div>
-		<div class='rankinglist-selected'>
 			<router-view name="ranking_list"></router-view>
-		</div>
-		<div class='details'>
 			<router-view name="sb_details"></router-view>
 		</div>
+		<router-view name="lower"></router-view>
   </div>
 </template>
 
