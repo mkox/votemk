@@ -16,7 +16,12 @@
 	  </div>
 		<div id='filteredListOfVoteDifferences'>
 			<VoteDifferences
-			:voteDifferences="rankingList.filteredListOfVoteDifferences">
+			:voteDifferences="rankingList.filteredListOfVoteDifferences" :listType="filteredListOfVoteDifferences">
+			</voteDifferences>
+		</div>
+		<div id='istOfVoteDifferences'>
+			<VoteDifferences
+			:voteDifferences="rankingList.listOfVoteDifferences" :listType="listOfVoteDifferences">
 			</voteDifferences>
 		</div>
   </div>
@@ -42,7 +47,9 @@
       gridColumns: ['name', 'vue_seats', 'vue_seats_changed', 'vue_votes'],
       gridData: [],
       rankingListId: -1,
-			rankingList: {}
+			rankingList: {},
+			filteredListOfVoteDifferences: 'filtered',
+			listOfVoteDifferences: 'unfiltered'
     }),
     beforeRouteEnter (to, from, next) {
       console.log('Vote.vue beforeRouteEnter to', to);

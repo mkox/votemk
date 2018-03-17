@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>Filtered Ranking List with Vote Differences:</h2>
+		<h2>{{ listType }} Ranking List with Vote Differences:</h2>
 		<div v-for="(area, areaKey) in voteDifferences" v-if="area.length > 0">
 			<ol>
 				<li v-for="(diff, diffIndex) in area">
@@ -20,7 +20,8 @@
 export default {
   name: 'VoteDifferences',
   props: {
-    voteDifferences: Object
+    voteDifferences: Object,
+		listType: String
   },
   data: function () {
 		return {}
