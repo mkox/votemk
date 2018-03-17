@@ -63,7 +63,6 @@
       var thisBeforeMount = this;
       
 			console.log('Vote.vue thisBeforeMount.rankingListId: ', thisBeforeMount.rankingListId);
-      //store.commit('SET_CURRENT_RANKING_LIST', thisBeforeMount.rankingListId)
 /*
       //store.dispatch('setExtendedData').then(DelayPromise(1000)).then(() => {  // TODO: LATER OTHER SOLUTION than DelayPromise()
         //thisBeforeMount.gridData = this.$store.getters.getSupervisoryBoards;

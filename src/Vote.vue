@@ -43,7 +43,6 @@
       console.log('Vote.vue beforeRouteEnter this', this);
 			console.log('Vote.vue beforeRouteEnter rankingListId to.params.rl_id', to.params.rl_id);
 			
-			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
 			next(vm => {
 				vm.rankingListId = to.params.rl_id,
 				vm.gridData = store.getters.getSupervisoryBoards,
@@ -55,7 +54,6 @@
 			console.log('Vote.vue beforeRouteUpdate rankingListId to.params.rl_id', to.params.rl_id);
 			
 			//if(this.rankingListId != to.params.rl_id) {
-			store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
 			next(vm => {
 				vm.rankingListId = to.params.rl_id,
 				vm.gridData = store.getters.getSupervisoryBoards,
@@ -67,6 +65,7 @@
 			'$route' (to, from) { // works only together with "beforeRouteUpdate"
 				// react to route changes...
 				console.log('Vote.vue watch to', to);
+				store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
 				this.rankingListId = to.params.rl_id,
 				this.gridData = store.getters.getSupervisoryBoards;
 				this.rankingList = store.getters.getCurrentRankingList;
@@ -81,7 +80,6 @@
       var thisBeforeMount = this;
       
 			console.log('Vote.vue thisBeforeMount.rankingListId: ', thisBeforeMount.rankingListId);
-      //store.commit('SET_CURRENT_RANKING_LIST', thisBeforeMount.rankingListId)
 
       //store.dispatch('setExtendedData').then(DelayPromise(1000)).then(() => {  // TODO: LATER OTHER SOLUTION than DelayPromise()
         //thisBeforeMount.gridData = this.$store.getters.getSupervisoryBoards;
