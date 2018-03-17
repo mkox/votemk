@@ -825,6 +825,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
 
     function additionals() {
         addAreaSeatsToSBs();
+        addTextOfFilterStatus();
     }
 
     function addAreaSeatsToSBs() {
@@ -833,6 +834,17 @@ define(['seatsDistribution'], function (seatsDistribution) {
             sbs[i].seats.regional.total = getRegionalSeats(sbs[i].seats.total);
             sbs[i].seats.international.total = getInternationalSeats(sbs[i].seats.total);
         }
+    }
+    
+    function addTextOfFilterStatus() {
+        var texts = {};
+        texts[1] = '<span class="not-filtered">(1) Not filtered!</span> So here the party with too few seats gets an additional seat.';
+        texts[2] = '(2) The LIST of the party with too MUCH seats has NOT at least 1 seat in this supervisory board for this area.';
+        texts[3] = '(3) The LIST of the party with too MUCH seats has NOT ANY MORE at least 1 seat in this supervisory board for this area.';
+        texts[4] = '(4) The party with too FEW seats has NOT too few seats now; it already got additional seats.';
+        texts[5] = '(5) The party with too MUCH seats has NOT more seats than it should have any more; it has already given the seats that where too much.';
+        texts[6] = '(6) The LIST with parties with too FEW seats already got a seat in this supervisory board through the vote-difference-procedure.';
+        extendedData.textOfFilterStatus = texts;
     }
 
     function getRegionalSeats(seats) {
