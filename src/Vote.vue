@@ -14,6 +14,11 @@
         </votegrid>
       </div>
 	  </div>
+		<div id='filteredListOfVoteDifferences'>
+			<VoteDifferences
+			:voteDifferences="rankingList.filteredListOfVoteDifferences">
+			</voteDifferences>
+		</div>
   </div>
 </template>
 
@@ -21,6 +26,7 @@
   import Vue from 'vue';
   import Votegrid from './components/Votegrid';
   //console.log('Votegrid:', Votegrid);
+  import VoteDifferences from './components/VoteDifferences';
   import store from './vuex/store'
   //import axios from 'axios';
   //import rankingList from 'rankingList';
@@ -115,7 +121,8 @@
       console.log('Vote.vue updated');
     },
     components: {
-      'votegrid': Votegrid
+      'votegrid': Votegrid,
+      'VoteDifferences': VoteDifferences
     },
     store
   };
