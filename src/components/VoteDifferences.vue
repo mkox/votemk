@@ -8,7 +8,7 @@
 						{{ entryKey }}: 
 						<span v-if="typeof entry == 'object'">{{ entry.name }}</span>
 						<span v-else-if="entryKey == 'filterStatus'" v-html="textOfFilterStatus[entry]"></span>
-						<span v-else>{{ entry }}</span><br>
+						<span v-else-if="entryKey == 'difference'">{{Math.round(entry*100)/100}} %</span><br>
 					</span>
 				</li>
 			</ol>
@@ -91,7 +91,16 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+	#lower .not-filtered { /* Does not work with "scoped" */
+		font-weight: bold;
+	}
+	#lower .difference {
+		font-weight: bold;
+	}
+	#filteredListOfVoteDifferences .filterStatus {
+		display: none;
+	}
 	/*
 	.oppositeAreaLink {
 		float: right;

@@ -5,7 +5,7 @@
 			:voteDifferences="rankingList.filteredListOfVoteDifferences" :listType="filteredListOfVoteDifferences" :textOfFilterStatus="textOfFilterStatus">
 			</voteDifferences>
 		</div>
-		<div id='istOfVoteDifferences'>
+		<div id='listOfVoteDifferences'>
 			<VoteDifferences
 			:voteDifferences="rankingList.listOfVoteDifferences" :listType="listOfVoteDifferences" :textOfFilterStatus="textOfFilterStatus">
 			</voteDifferences>
