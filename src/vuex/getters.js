@@ -20,6 +20,9 @@ export default {
 	getRegionOfRL(state) {
 		return state.extendedData.current_ranking_list.region;
 	},
+	getTextOfFilterStatus(state) {
+		return state.extendedData.textOfFilterStatus;
+	},
   getMessage(state) {
     return (state.msg).toUpperCase()
   },

@@ -7,6 +7,7 @@
 					<span v-for="(entry, entryKey) in diff" :class="entryKey">
 						{{ entryKey }}: 
 						<span v-if="typeof entry == 'object'">{{ entry.name }}</span>
+						<span v-else-if="entryKey == 'filterStatus'" v-html="textOfFilterStatus[entry]"></span>
 						<span v-else>{{ entry }}</span><br>
 					</span>
 				</li>
@@ -21,7 +22,8 @@ export default {
   name: 'VoteDifferences',
   props: {
     voteDifferences: Object,
-		listType: String
+		listType: String,
+		textOfFilterStatus: Object
   },
   data: function () {
 		return {}
@@ -71,15 +73,19 @@ export default {
 		*/
   },
   filters: {
+		/*
     capitalize: function (str) {
       return str.charAt(0).toUpperCase() + str.slice(1)
     }
+		*/
   },
   methods: {
+		/*
     sortBy: function (key) {
       this.sortKey = key
       this.sortOrders[key] = this.sortOrders[key] * -1
     }
+		*/
   }
 }
 </script>

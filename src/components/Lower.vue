@@ -2,12 +2,12 @@
 	<div id='lower'>
 		<div id='filteredListOfVoteDifferences'>
 			<VoteDifferences
-			:voteDifferences="rankingList.filteredListOfVoteDifferences" :listType="filteredListOfVoteDifferences">
+			:voteDifferences="rankingList.filteredListOfVoteDifferences" :listType="filteredListOfVoteDifferences" :textOfFilterStatus="textOfFilterStatus">
 			</voteDifferences>
 		</div>
 		<div id='istOfVoteDifferences'>
 			<VoteDifferences
-			:voteDifferences="rankingList.listOfVoteDifferences" :listType="listOfVoteDifferences">
+			:voteDifferences="rankingList.listOfVoteDifferences" :listType="listOfVoteDifferences" :textOfFilterStatus="textOfFilterStatus">
 			</voteDifferences>
 		</div>
   </div>
@@ -28,7 +28,8 @@
       rankingListId: -1,
 			rankingList: {},
 			filteredListOfVoteDifferences: 'filtered',
-			listOfVoteDifferences: 'unfiltered'
+			listOfVoteDifferences: 'unfiltered',
+			textOfFilterStatus: store.getters.getTextOfFilterStatus
     }),
     beforeRouteEnter (to, from, next) {
 			next(vm => {
