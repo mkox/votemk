@@ -838,7 +838,7 @@ define(['seatsDistribution'], function (seatsDistribution) {
     
     function addTextOfFilterStatus() {
         var texts = {};
-        texts[1] = '<span class="not-filtered">(1) Not filtered!</span> So here the party with too few seats gets an additional seat.';
+        texts[1] = '<span class="not-filtered">(1) Is in filtered list!</span> So here the party with too few seats gets an additional seat.';
         texts[2] = '(2) The LIST of the party with too MUCH seats has NOT at least 1 seat in this supervisory board for this area.';
         texts[3] = '(3) The LIST of the party with too MUCH seats has NOT ANY MORE at least 1 seat in this supervisory board for this area.';
         texts[4] = '(4) The party with too FEW seats has NOT too few seats now; it already got additional seats.';
