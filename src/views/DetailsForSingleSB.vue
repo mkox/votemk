@@ -2,11 +2,10 @@
   <table>
     <tr>
       <td>
-        <div>Name of the sb: {{ sb.name }}<br>
-        </div>
+				<h3>Supervisory board "{{ sb.name }}":</h3>
         <div v-if="sb">
           <div v-if="sb.voteDifferences.international.length > 0 || sb.voteDifferences.regional.length > 0">
-						<br>
+						<h4>Seats changed:</h4>
             <table>
               <thead>
                 <tr>
@@ -36,24 +35,40 @@
       </td>
     </tr>
     <tr>
-      <td>
-        <table>
-          <tr v-for="list in sbLists">
-            <td>
-                Name of list/party: {{ list.name }}
-								<span v-if="typeof sb.rankingLists.international.id != 'undefined'"><br>
-                Votes international: 
-								{{ list.votes.international }}
-							</span><br>
-							<span>
-								Votes regional: 
-								{{ list.votes.regional }}
-							</span>
-							
-            </td>
-          </tr>
-        </table>
-      </td>
+			<td><h4>Lists/parties of this supervisory board:</h4>
+				<table>
+					<thead>
+						<tr>
+							<th>Name of<br>list/party</th>
+							<th>Votes<br>regional</th>
+							<th>Votes<br>international</th>
+							<th>Seats final<br>regional</th>
+							<th>Seats final<br>international</th>
+							<th>Seats first<br>regional</th>
+							<th>Seats first<br>international</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="list in sbLists">
+							<td>{{ list.name }}</td>
+							<td>{{ list.votes.regional }}</td>
+							<td><span v-if="typeof sb.rankingLists.international.id != 'undefined'">{{ list.votes.international }}
+								</span>
+								<span v-else>0</span>
+							</td>
+							<td>{{ list.seats.regional.corrected }}</td>
+							<td><span v-if="typeof sb.rankingLists.international.id != 'undefined'">{{ list.seats.international.corrected }}
+								</span>
+								<span v-else>0</span></td>
+							<td>{{ list.seats.regional.first }}</td>
+							<td><span v-if="typeof sb.rankingLists.international.id != 'undefined'">{{ list.seats.international.first }}
+								</span>
+								<span v-else>0</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
     </tr>
   </table>
 </template>
