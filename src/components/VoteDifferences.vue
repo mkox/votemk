@@ -2,16 +2,24 @@
 	<div>
 		<h2>{{ listType }} Ranking List with Vote Differences:</h2>
 		<div v-for="(area, areaKey) in voteDifferences" v-if="area.length > 0">
-			<ol>
-				<li v-for="(diff, diffIndex) in area">
-					<span v-for="(entry, entryKey) in diff" :class="entryKey">
-						{{ entryKey }}: 
-						<span v-if="typeof entry == 'object'">{{ entry.name }}</span>
-						<span v-else-if="entryKey == 'filterStatus'" v-html="textOfFilterStatus[entry]"></span>
-						<span v-else-if="entryKey == 'difference'">{{Math.round(entry*100)/100}} %</span><br>
-					</span>
-				</li>
-			</ol>
+			<table>
+				<thead>
+					<tr>
+						<th>difference</th>
+						<th>too few</th>
+						<th>too much</th>
+						<th>filter status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(diff, diffIndex) in area">
+						<td class="difference">{{Math.round(diff.difference*100)/100}} %</td>
+						<td class="listTooFew">{{diff.listTooFew.name}}</td>
+						<td class="listTooMuch">{{diff.listTooMuch.name}}</td>
+						<td class="filterStatus"><span v-html="textOfFilterStatus[diff.filterStatus]"></span></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </template>
@@ -99,7 +107,7 @@ export default {
 		font-weight: bold;
 	}
 	#filteredListOfVoteDifferences .filterStatus {
-		display: none;
+		/*display: none;*/
 	}
 	/*
 	.oppositeAreaLink {

@@ -10,23 +10,23 @@
             <table>
               <thead>
                 <tr>
+                  <th>difference</th>
                   <th>too few</th>
                   <th>too much</th>
-                  <th>difference</th>
                   <th>area</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="(entry, entryIndex) in sb.voteDifferences.international">
+                  <td>{{Math.round(entry.difference*100)/100}} %</td>
                   <td>{{entry.listTooFew.name}}</td>
                   <td>{{entry.listTooMuch.name}}</td>
-                  <td>{{Math.round(entry.difference*100)/100}} %</td>
                   <td>international</td>
                 </tr>
                 <tr v-for="(entry, entryIndex) in sb.voteDifferences.regional">
+                  <td>{{Math.round(entry.difference*100)/100}} %</td>
                   <td>{{entry.listTooFew.name}}</td>
                   <td>{{entry.listTooMuch.name}}</td>
-                  <td>{{Math.round(entry.difference*100)/100}} %</td>
                   <td>regional</td>
                 </tr>
               </tbody>
