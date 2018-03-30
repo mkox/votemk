@@ -79,6 +79,11 @@
       console.log('"this" in beforeMount: ', this);
       //console.log('thisBeforeMount.gridData in beforeMount: ', thisBeforeMount.gridData);
     },
+    watch: {
+			'$route' (to, from) {
+				store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
+			}
+    },
     components: {
       'ListOfRankingLists': ListOfRankingLists
     },

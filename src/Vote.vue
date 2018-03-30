@@ -65,7 +65,7 @@
 			'$route' (to, from) { // works only together with "beforeRouteUpdate"
 				// react to route changes...
 				console.log('Vote.vue watch to', to);
-				store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
+				
 				this.rankingListId = to.params.rl_id,
 				this.gridData = store.getters.getSupervisoryBoards;
 				this.rankingList = store.getters.getCurrentRankingList;

@@ -52,8 +52,6 @@
 			'$route' (to, from) { // works only together with "beforeRouteUpdate"
 				// react to route changes...
 				
-				store.commit('SET_CURRENT_RANKING_LIST', to.params.rl_id);
-				
 				console.log('Vote.vue watch to', to);
 				this.rankingListId = to.params.rl_id,
 				this.rankingList = store.getters.getCurrentRankingList;
