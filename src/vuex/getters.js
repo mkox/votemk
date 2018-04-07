@@ -20,6 +20,9 @@ export default {
 	getRegionOfRL(state) {
 		return state.extendedData.current_ranking_list.region;
 	},
+	getPartiesOfRL(state){
+		return showPartiesOfRL(state);
+	},
 	getTextOfFilterStatus(state) {
 		return state.extendedData.textOfFilterStatus;
 	},
@@ -32,6 +35,26 @@ export default {
   getExtendedData(state) {
     return state.extendedData;
   }
+}
+
+function showPartiesOfRL(state){
+	var partiesOfRL = [];
+	var rlId = state.extendedData.current_ranking_list.id;
+	var area = state.extendedData.current_ranking_list.area;
+	var parties = state.extendedData.parties;
+	for(var p = 0; p < parties.length; p++){
+		if(parties[p].votes[rlId][area] > 0) {
+			var party = {};
+			party.id = parties[p].id;
+			party.name = parties[p].name;
+			party.votes = parties[p].votes[rlId][area];
+			party.seats = {};
+			party.seats.first = parties[p].seats[rlId][area].first;
+			party.seats.corrected = parties[p].seats[rlId][area].corrected;
+			partiesOfRL.push(party);
+		}
+	}
+	return partiesOfRL;
 }
 
 function showSBBasics(state) {

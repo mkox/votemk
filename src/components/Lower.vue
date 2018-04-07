@@ -10,12 +10,18 @@
 			:voteDifferences="rankingList.listOfVoteDifferences" :listType="listOfVoteDifferences" :textOfFilterStatus="textOfFilterStatus">
 			</voteDifferences>
 		</div>
+		<div id='listOfParties'>
+			<Parties
+			:partiesOfRL="partiesOfRL">
+			</Parties>
+		</div>
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
   import VoteDifferences from './VoteDifferences';
+  import Parties from './Parties';
   import store from '../vuex/store'
 
   export default {
@@ -29,7 +35,8 @@
 			rankingList: {},
 			filteredListOfVoteDifferences: 'filtered',
 			listOfVoteDifferences: 'unfiltered',
-			textOfFilterStatus: store.getters.getTextOfFilterStatus
+			textOfFilterStatus: store.getters.getTextOfFilterStatus,
+			partiesOfRL: store.getters.getPartiesOfRL
     }),
     beforeRouteEnter (to, from, next) {
 			next(vm => {
@@ -53,8 +60,9 @@
 				// react to route changes...
 				
 				console.log('Vote.vue watch to', to);
-				this.rankingListId = to.params.rl_id,
+				this.rankingListId = to.params.rl_id;
 				this.rankingList = store.getters.getCurrentRankingList;
+				this.partiesOfRL = store.getters.getPartiesOfRL;
 			}
     },
     beforeMount() {
@@ -95,7 +103,8 @@
       console.log('Vote.vue updated');
     },
     components: {
-      'VoteDifferences': VoteDifferences
+      'VoteDifferences': VoteDifferences,
+			'Parties': Parties
     },
     store
   };
