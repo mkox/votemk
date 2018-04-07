@@ -2,8 +2,6 @@
 
 > This project is similar to the one in https://github.com/mkox/Mk.Vote-flow.
 Instead of PHP now JavaScript is at its center, using vue.js (https://vuejs.org/), started with vue-cli + webpack.
-At the moment only one table with some basic data is shown in the frontend, but much more data is already calculated in the background
-(and e.g. can be seen in a browser console).
 
 ## Build Setup
 
